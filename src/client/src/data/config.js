@@ -1,7 +1,7 @@
 const configData = {
   header: {
-    headerColor: '#ee6e73',
-    headerLogoBgColor: '#e05e63',
+    headerColor: '#f05c27',
+    headerLogoBgColor: '#f05c27',
     headerLogo: ['android', 'accessibility', 'alarm'],
   },
   registrationSettings: {
@@ -11,6 +11,8 @@ const configData = {
     showContact: true,
   },
   bodyBackground: '#e5ffff',
+  homePageBgColor: '#f0fff7',
+  landingPageBg: '#f0fff7',
 }
 
 export default configData;

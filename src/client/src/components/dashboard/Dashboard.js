@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import configData from '../../data/config';
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -13,7 +14,12 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     console.log("user name-->",user );
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div 
+      style= {{ 
+        height: "75vh", 
+        backgroundColor: `${configData.homePageBgColor}` 
+      }} 
+      className="container valign-wrapper">
         <div className="row">
           <div className="landing-copy col s12 center-align">
             <h4>

@@ -70,7 +70,6 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import Dashboard from "./components/dashboard/Dashboard";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import configData from './data/config';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -96,11 +95,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App"
-            style={{
-              backgroundColor: `${configData.bodyBackground}`,
-            }}
-          >
+          <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
