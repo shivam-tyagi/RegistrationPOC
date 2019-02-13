@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
+import configData from '../../data/config';
 
 class Register extends Component {
   constructor() {
@@ -116,20 +117,23 @@ class Register extends Component {
                 <label htmlFor="firstname">Firstname</label>
                 <span className="red-text">{errors.name}</span>
               </div>
-              <div className="input-field col s12">
-                <input required
-                  onChange={this.onChange}
-                  value={this.state.lastname}
-                  error={errors.lastname}
-                  id="lastname"
-                  type="text"
-                  className={classnames("", {
-                    invalid: errors.lastname
-                  })}
-                />
-                <label htmlFor="lastname">Lastname</label>
-                <span className="red-text">{errors.name}</span>
-              </div>     
+              {configData.registrationSettings.showLastName ? (
+                <div className="input-field col s12">
+                  <input required
+                    onChange={this.onChange}
+                    value={this.state.lastname}
+                    error={errors.lastname}
+                    id="lastname"
+                    type="text"
+                    className={classnames("", {
+                      invalid: errors.lastname
+                    })}
+                  />
+                  <label htmlFor="lastname">Lastname</label>
+                  <span className="red-text">{errors.name}</span>
+                </div>     
+
+              ) : null}
               <div className="input-field col s12">
                 <input required
                   onChange={this.onChange}
