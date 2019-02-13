@@ -103,20 +103,22 @@ class Register extends Component {
                 <label htmlFor="password">Password</label>
                 <span className="red-text">{errors.password}</span>
               </div>
-              <div className="input-field col s12">
-                <input required
-                  onChange={this.onChange}
-                  value={this.state.firstname}
-                  error={errors.firstname}
-                  id="firstname"
-                  type="text"
-                  className={classnames("", {
-                    invalid: errors.firstname
-                  })}
-                />
-                <label htmlFor="firstname">Firstname</label>
-                <span className="red-text">{errors.name}</span>
-              </div>
+              {configData.registrationSettings.showFirstName ? (
+                <div className="input-field col s12">
+                  <input required
+                    onChange={this.onChange}
+                    value={this.state.firstname}
+                    error={errors.firstname}
+                    id="firstname"
+                    type="text"
+                    className={classnames("", {
+                      invalid: errors.firstname
+                    })}
+                  />
+                  <label htmlFor="firstname">Firstname</label>
+                  <span className="red-text">{errors.name}</span>
+                </div>
+              ) : null}
               {configData.registrationSettings.showLastName ? (
                 <div className="input-field col s12">
                   <input required
@@ -134,34 +136,38 @@ class Register extends Component {
                 </div>     
 
               ) : null}
-              <div className="input-field col s12">
-                <input required
-                  onChange={this.onChange}
-                  value={this.state.dob}
-                  error={errors.dob}
-                  id="dob"
-                  type="date"
-                  className={classnames("", {
-                    invalid: errors.dob
-                  })}
-                />
-                <label htmlFor="dob">DOB</label>
-                <span className="red-text">{errors.dob}</span>
-              </div>
-              <div className="input-field col s12">
-                <input required
-                  onChange={this.onChange}
-                  value={this.state.contact}
-                  error={errors.contact}
-                  id="contact"
-                  type="text"
-                  className={classnames("", {
-                    invalid: errors.contact
-                  })}
-                />
-                <label htmlFor="contact">Contact</label>
-                <span className="red-text">{errors.contact}</span>
-              </div>
+              {configData.registrationSettings.showDOB ? (
+                <div className="input-field col s12">
+                  <input required
+                    onChange={this.onChange}
+                    value={this.state.dob}
+                    error={errors.dob}
+                    id="dob"
+                    type="date"
+                    className={classnames("", {
+                      invalid: errors.dob
+                    })}
+                  />
+                  <label htmlFor="dob">DOB</label>
+                  <span className="red-text">{errors.dob}</span>
+                </div>
+              ) : null}
+              {configData.registrationSettings.showContact ? (
+                <div className="input-field col s12">
+                  <input required
+                    onChange={this.onChange}
+                    value={this.state.contact}
+                    error={errors.contact}
+                    id="contact"
+                    type="text"
+                    className={classnames("", {
+                      invalid: errors.contact
+                    })}
+                  />
+                  <label htmlFor="contact">Contact</label>
+                  <span className="red-text">{errors.contact}</span>
+                </div>
+              ) : null}
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
                   style={{

@@ -6,17 +6,20 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar-fixed">
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
+        <nav className="z-depth-0" style={{
+          backgroundColor: `${configData.header.headerColor}`,
+        }}>
+          {/* <div className="nav-wrapper white"> */}
+          <div className="nav-wrapper">
             <Link
               to="/"
               style={{
                 fontFamily: "monospace",
-                backgroundColor: `${configData.header.headerColor}`,
+                backgroundColor: `${configData.header.headerLogoBgColor}`,
               }}
               className="col s5 brand-logo center black-text"
             >
-              <i className="material-icons">insert_photo</i>
+              <i className="material-icons">{configData.header.headerLogo[1]}</i>
               Registration Portal
             </Link>
           </div>
