@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/actions";
 import classnames from "classnames";
 import configData from '../../data/config';
+import ImageCarouselForLogin from '../imageCarouselLogin/ImageCarouselForLogin';
 
 class Login extends Component {
   constructor() {
@@ -50,28 +51,29 @@ class Login extends Component {
     this.props.loginUser(userData);
   };
 
+  closeBtnClickHandler = e => {
+    console.log('close click handler', this.props);
+    this.props.history.push("/");
+  }
+
   render() {
     const { errors } = this.state;
 
     return (
-      <div className="container" 
-      style={{
-        backgroundColor: `${configData.bodyBackground}`,
-      }}
-      >
-        <div style={{ marginTop: "4rem" }} className="row">
-          <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
+      <div className="container loginPage" style={{ backgroundColor: `${configData.bodyBackground}` }}>
+        <div className="row">
+          <div className='signin-logo'></div>
+          <div className='login-close-btn' onClick={this.closeBtnClickHandler}></div>
+          <ImageCarouselForLogin></ImageCarouselForLogin>
+          <div className="col s8 offset-s2" id="loginTemplateContainer">
+            {/* <Link to="/" className="btn-flat waves-effect">
+              <i className="material-icons left">keyboard_backspace</i> Back to home
+            </Link> */}
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Login</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
+              <h4>Sign in</h4>
+              {/* <p className="grey-text text-darken-1">
                 Don't have an account? <Link to="/register">Register</Link>
-              </p>
+              </p> */}
             </div>
             <form  onSubmit={this.onSubmit}>
               <div className="input-field col s12">
@@ -123,6 +125,11 @@ class Login extends Component {
                 </button>
               </div>
             </form>
+            <div className='separator-line'>or</div>
+            <div className='social-media-icon-container'>Social media icons</div>
+            <p className='text-redirection-signup'> Don't have an account?
+              <Link to="/signup">Signup</Link>
+            </p>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ class Landing extends Component {
       <div style={{ height: "75vh", backgroundColor: `${configData.landingPageBg}`, }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
+            <h3>This is a home page</h3>
             <h4>
               <b>Register</b> yourself with us.{" "}
             </h4>
@@ -17,7 +18,7 @@ class Landing extends Component {
             <br />
             <div className="col s6">
               <Link
-                to="/register"
+                to="/signup"
                 style={{
                   width: "140px",
                   borderRadius: "3px",

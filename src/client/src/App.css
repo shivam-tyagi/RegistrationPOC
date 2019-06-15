@@ -1,0 +1,63 @@
+/*------Login Page-------*/
+
+.loginPage {
+  width: 100%;
+  height: 100%;
+}
+
+#loginTemplateContainer {
+  margin-top: 20%;
+  margin-left: 30%;
+  border: 1px solid red;
+}
+
+.login-close-btn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: 1px solid red;
+  right: 10px;
+  top: 20px;
+}
+
+.separator-line {
+  margin-left: 40%;
+}
+
+.social-media-icon-container {
+  width: 340px;
+  height: 140px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border: 1px solid green;
+}
+
+.signin-logo {
+  width: 130px;
+  height: 30px;
+  position: absolute;
+  border: 1px solid red;
+  left: 10px;
+  top: 20px;
+}
+
+/*---------- Signup page --------*/
+
+.signup-page-container {
+  width: 100%;
+  height: 100%;
+}
+
+.signinTemplateContainer {
+  margin-top: 20%;
+  margin-left: 30% !important;
+  border: 1px solid red;
+}
+
+/*-------------Image Carousel -----*/
+.imageCarouselConatainer {
+  width: 30%;
+  position: absolute;
+  margin-top: 14%;
+}

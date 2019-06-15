@@ -5,8 +5,9 @@ import { connect } from "react-redux";
 import { registerUser } from "../../actions/actions";
 import classnames from "classnames";
 import configData from '../../data/config';
+import ImageCarouselForLogin from '../imageCarouselLogin/ImageCarouselForLogin';
 
-class Register extends Component {
+class SignUp extends Component {
   constructor() {
     super();
     this.state = {
@@ -55,58 +56,32 @@ class Register extends Component {
     this.props.registerUser(newUser, this.props.history);
   };
 
+  closeBtnClickHandler = e => {
+    console.log('close click handler', this.props);
+    this.props.history.push("/");
+  }
+
   render() {
     const { errors } = this.state;
 
     return (
-      <div className="container"
-      style={{
-        backgroundColor: `${configData.bodyBackground}`,
-      }}
-      >
+      <div className="container signup-page-container" style={{ backgroundColor: `${configData.bodyBackground}`}} >
         <div className="row">
-          <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
+          <div className='signin-logo'></div>
+          <div className='login-close-btn' onClick={this.closeBtnClickHandler}></div>
+          <ImageCarouselForLogin></ImageCarouselForLogin>
+          <div className="col s8 offset-s2 signinTemplateContainer">
+            {/* <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
-            </Link>
+            </Link> */}
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
+              <h4> Create Account </h4>
+              {/* <p className="grey-text text-darken-1">
                 Already have an account? <Link to="/login">Log in</Link>
-              </p>
+              </p> */}
             </div>
             <form  onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
-                <input required
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                  className={classnames("", {
-                    invalid: errors.email
-                  })}
-                />
-                <label htmlFor="email">Email</label>
-                <span className="red-text">{errors.email}</span>
-              </div>
-              <div className="input-field col s12">
-                <input required
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                  className={classnames("", {
-                    invalid: errors.password
-                  })}
-                />
-                <label htmlFor="password">Password</label>
-                <span className="red-text">{errors.password}</span>
-              </div>
               {configData.registrationSettings.showFirstName ? (
                 <div className="input-field col s12">
                   <input required
@@ -140,7 +115,49 @@ class Register extends Component {
                 </div>     
 
               ) : null}
-              {configData.registrationSettings.showDOB ? (
+              <div className="input-field col s12">
+                <input required
+                  onChange={this.onChange}
+                  value={this.state.email}
+                  error={errors.email}
+                  id="email"
+                  type="email"
+                  className={classnames("", {
+                    invalid: errors.email
+                  })}
+                />
+                <label htmlFor="email">Email</label>
+                <span className="red-text">{errors.email}</span>
+              </div>
+              <div className="input-field col s12">
+                <input required
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  error={errors.password}
+                  id="password"
+                  type="password"
+                  className={classnames("", {
+                    invalid: errors.password
+                  })}
+                />
+                <label htmlFor="password">Password</label>
+                <span className="red-text">{errors.password}</span>
+              </div>
+              <div className="input-field col s12">
+                <input required
+                  // onChange={this.onChange}
+                  // value={this.state.password}
+                  // error={errors.password}
+                  // id="password"
+                  // type="password"
+                  // className={classnames("", {
+                  //   invalid: errors.password
+                  // })}
+                />
+                <label htmlFor="password">Confirm Password</label>
+                <span className="red-text">{errors.password}</span>
+              </div>
+              {/* {configData.registrationSettings.showDOB ? (
                 <div className="input-field col s12">
                   <input required
                     onChange={this.onChange}
@@ -155,8 +172,8 @@ class Register extends Component {
                   <label htmlFor="dob">DOB</label>
                   <span className="red-text">{errors.dob}</span>
                 </div>
-              ) : null}
-              {configData.registrationSettings.showContact ? (
+              ) : null} */}
+              {/* {configData.registrationSettings.showContact ? (
                 <div className="input-field col s12">
                   <input required
                     onChange={this.onChange}
@@ -171,7 +188,7 @@ class Register extends Component {
                   <label htmlFor="contact">Contact</label>
                   <span className="red-text">{errors.contact}</span>
                 </div>
-              ) : null}
+              ) : null} */}
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
                   style={{
@@ -187,6 +204,11 @@ class Register extends Component {
                 </button>
               </div>
             </form>
+            <div className='separator-line'>or</div>
+            <div className='social-media-icon-container'>Social media icons</div>
+            <p className='text-redirection-signup'> Already have an account?
+              <Link to="/signup"> Signin</Link>
+            </p>
           </div>
         </div>
       </div>
@@ -194,7 +216,7 @@ class Register extends Component {
   }
 }
 
-Register.propTypes = {
+SignUp.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
@@ -208,4 +230,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { registerUser }
-)(withRouter(Register));
+)(withRouter(SignUp));
