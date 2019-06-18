@@ -61,3 +61,37 @@
   position: absolute;
   margin-top: 14%;
 }
+
+/*-----------------Landing Page-------------*/
+
+.landingPage {
+  width: 100%;
+}
+
+.love-symbol {
+  width: 10px;
+  height: 10px;
+  border: 1px solid greenyellow;
+}
+
+.image-container {
+  width: 200px;
+  height: 200px;
+}
+
+.image-container img{
+  width: 200px;
+  height: 80px;
+}
+
+.landing-page-social-media-icons {
+  width: 100%;
+  height: 150px;
+  border: 2px dotted blue;
+}
+
+.landing-page-copyright-text {
+  width: 100%;
+  height: 150px;
+  border: 2px dashed grey;
+}

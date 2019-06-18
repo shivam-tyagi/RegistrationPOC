@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/actions";
 import classnames from "classnames";
-import configData from '../../data/config';
+import {configData} from '../../data/config';
 import ImageCarouselForLogin from '../imageCarouselLogin/ImageCarouselForLogin';
 
 class SignUp extends Component {
