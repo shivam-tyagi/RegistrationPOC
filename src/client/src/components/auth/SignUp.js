@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/actions";
 import classnames from "classnames";
-import {configData} from '../../data/config';
+import {configData, signup_carousel_images} from '../../data/config';
 import ImageCarouselForLogin from '../imageCarouselLogin/ImageCarouselForLogin';
 
 class SignUp extends Component {
@@ -15,8 +15,7 @@ class SignUp extends Component {
       password: "",
       firstname: "",
       lastname:"",
-      dob:"",
-      contact: "",
+      confirmPassword: "",
       errors: {}
     };
   }
@@ -44,16 +43,31 @@ class SignUp extends Component {
     e.preventDefault();
 
     const newUser = {
-      
       email: this.state.email,
       password: this.state.password,
       firstname: this.state.firstname,
-      lastname:this.state.lastname,
-      dob:this.state.dob,
-      contact: this.state.contact
+      lastname: this.state.lastname
     };
 
     this.props.registerUser(newUser, this.props.history);
+  };
+
+  onBlurConfirmPassword = e => {
+    console.log('on confirm password blur>>>',e);
+    // e.target.value = '';
+    if(this.state.password == this.state.confirmPassword){
+      console.log('password validated');
+      return;
+    } else {
+      console.log('password error>>>>');
+      e.target.value = '';
+      this.setState({
+        confirmPassword: '',
+        errors: {
+          confirmPassword: 'Revalidate the password'
+        }
+      });
+    }
   };
 
   closeBtnClickHandler = e => {
@@ -69,7 +83,7 @@ class SignUp extends Component {
         <div className="row">
           <div className='signin-logo'></div>
           <div className='login-close-btn' onClick={this.closeBtnClickHandler}></div>
-          <ImageCarouselForLogin></ImageCarouselForLogin>
+          <ImageCarouselForLogin images = {signup_carousel_images}></ImageCarouselForLogin>
           <div className="col s8 offset-s2 signinTemplateContainer">
             {/* <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
@@ -145,50 +159,19 @@ class SignUp extends Component {
               </div>
               <div className="input-field col s12">
                 <input required
-                  // onChange={this.onChange}
-                  // value={this.state.password}
-                  // error={errors.password}
-                  // id="password"
-                  // type="password"
-                  // className={classnames("", {
-                  //   invalid: errors.password
-                  // })}
+                  onBlur={this.onBlurConfirmPassword}
+                  onChange={this.onChange}
+                  value={this.state.confirmPassword}
+                  error={errors.confirmPassword}
+                  id="confirmPassword"
+                  type="password"
+                  className={classnames("", {
+                    invalid: errors.confirmPassword
+                  })}
                 />
-                <label htmlFor="password">Confirm Password</label>
-                <span className="red-text">{errors.password}</span>
+                <label htmlFor="confirmPassword">Confirm Password</label>
+                <span className="red-text">{errors.confirmPassword}</span>
               </div>
-              {/* {configData.registrationSettings.showDOB ? (
-                <div className="input-field col s12">
-                  <input required
-                    onChange={this.onChange}
-                    value={this.state.dob}
-                    error={errors.dob}
-                    id="dob"
-                    type="date"
-                    className={classnames("", {
-                      invalid: errors.dob
-                    })}
-                  />
-                  <label htmlFor="dob">DOB</label>
-                  <span className="red-text">{errors.dob}</span>
-                </div>
-              ) : null} */}
-              {/* {configData.registrationSettings.showContact ? (
-                <div className="input-field col s12">
-                  <input required
-                    onChange={this.onChange}
-                    value={this.state.contact}
-                    error={errors.contact}
-                    id="contact"
-                    type="text"
-                    className={classnames("", {
-                      invalid: errors.contact
-                    })}
-                  />
-                  <label htmlFor="contact">Contact</label>
-                  <span className="red-text">{errors.contact}</span>
-                </div>
-              ) : null} */}
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
                   style={{

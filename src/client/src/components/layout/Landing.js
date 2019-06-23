@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {configData , templateLayouts} from "../../data/config";
+import {configData , templateLayouts, landing_top_carousel_images, landing_bottom_carousel_images} from "../../data/config";
 import ImageCarouselForLogin from "../imageCarouselLogin/ImageCarouselForLogin";
 
 class Landing extends Component {
@@ -14,7 +14,7 @@ class Landing extends Component {
       <div style={{ height: "100%", backgroundColor: `${configData.landingPageBg}`, }} className="container valign-wrapper landingPage">
         <div className="row">
           <div className="col s12 center-align ">
-            <ImageCarouselForLogin></ImageCarouselForLogin>
+            <ImageCarouselForLogin images = {landing_top_carousel_images}></ImageCarouselForLogin>
             <div className="trendingImageContainer">
               <div className="trendingImageElems">
                 {
@@ -32,7 +32,7 @@ class Landing extends Component {
                 }
               </div>
             </div>
-            <ImageCarouselForLogin></ImageCarouselForLogin>
+            <ImageCarouselForLogin images = {landing_bottom_carousel_images}></ImageCarouselForLogin>
             <div className='landing-page-social-media-icons'>
               Social Media Icons
             </div>

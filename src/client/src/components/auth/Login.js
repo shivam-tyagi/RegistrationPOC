@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/actions";
 import classnames from "classnames";
-import {configData} from '../../data/config';
+import {configData, login_carousel_images} from '../../data/config';
 import ImageCarouselForLogin from '../imageCarouselLogin/ImageCarouselForLogin';
 
 class Login extends Component {
@@ -58,13 +58,14 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
+    // console.log('this,--', login_carousel_images);
 
     return (
       <div className="container loginPage" style={{ backgroundColor: `${configData.bodyBackground}` }}>
         <div className="row">
           <div className='signin-logo'></div>
           <div className='login-close-btn' onClick={this.closeBtnClickHandler}></div>
-          <ImageCarouselForLogin></ImageCarouselForLogin>
+          <ImageCarouselForLogin images = {login_carousel_images}></ImageCarouselForLogin>
           <div className="col s8 offset-s2" id="loginTemplateContainer">
             {/* <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to home

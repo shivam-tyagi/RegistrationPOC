@@ -14,6 +14,18 @@ import image_template13 from '../assets/template13.png';
 import image_template14 from '../assets/template14.png';
 import image_template15 from '../assets/template15.png';
 import image_template16 from '../assets/template16.png';
+import login_carousel_image1 from '../assets/carousel/login/1.png';
+import login_carousel_image2 from '../assets/carousel/login/2.png';
+import login_carousel_image3 from '../assets/carousel/login/3.png';
+import signup_carousel_image1 from '../assets/carousel/signup/1.png';
+import signup_carousel_image2 from '../assets/carousel/signup/2.png';
+import signup_carousel_image3 from '../assets/carousel/signup/3.png';
+import landing_top_carousel_image1 from '../assets/carousel/landing_top/1.png';
+import landing_top_carousel_image2 from '../assets/carousel/landing_top/2.png';
+import landing_top_carousel_image3 from '../assets/carousel/landing_top/3.png';
+import landing_bottom_carousel_image1 from '../assets/carousel/landing_bottom/1.png';
+import landing_bottom_carousel_image2 from '../assets/carousel/landing_bottom/2.png';
+import landing_bottom_carousel_image3 from '../assets/carousel/landing_bottom/3.png';
 
 export const configData = {
   header: {
@@ -80,5 +92,30 @@ export const templateLayouts = [{
 
   }
 ];
+
+export const login_carousel_images = {
+  1: login_carousel_image1,
+  2: login_carousel_image2,
+  3: login_carousel_image3,
+};
+
+export const signup_carousel_images = {
+  1: signup_carousel_image1,
+  2: signup_carousel_image2,
+  3: signup_carousel_image3,
+};
+
+export const landing_top_carousel_images = {
+  1: landing_top_carousel_image1,
+  2: landing_top_carousel_image2,
+  3: landing_top_carousel_image3,
+};
+
+export const landing_bottom_carousel_images = {
+  1: landing_bottom_carousel_image1,
+  2: landing_bottom_carousel_image2,
+  3: landing_bottom_carousel_image3,
+};
+
 
 export default {};
