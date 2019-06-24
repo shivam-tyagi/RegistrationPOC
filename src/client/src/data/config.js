@@ -93,29 +93,13 @@ export const templateLayouts = [{
   }
 ];
 
-export const login_carousel_images = {
-  1: login_carousel_image1,
-  2: login_carousel_image2,
-  3: login_carousel_image3,
-};
+export const login_carousel_images = [ login_carousel_image1, login_carousel_image2, login_carousel_image3 ];
 
-export const signup_carousel_images = {
-  1: signup_carousel_image1,
-  2: signup_carousel_image2,
-  3: signup_carousel_image3,
-};
+export const signup_carousel_images = [ signup_carousel_image1, signup_carousel_image2, signup_carousel_image3 ];
 
-export const landing_top_carousel_images = {
-  1: landing_top_carousel_image1,
-  2: landing_top_carousel_image2,
-  3: landing_top_carousel_image3,
-};
+export const landing_top_carousel_images = [ landing_top_carousel_image1, landing_top_carousel_image2, landing_top_carousel_image3 ];
 
-export const landing_bottom_carousel_images = {
-  1: landing_bottom_carousel_image1,
-  2: landing_bottom_carousel_image2,
-  3: landing_bottom_carousel_image3,
-};
+export const landing_bottom_carousel_images = [ landing_bottom_carousel_image1, landing_bottom_carousel_image2, landing_bottom_carousel_image3 ];
 
 
 export default {};

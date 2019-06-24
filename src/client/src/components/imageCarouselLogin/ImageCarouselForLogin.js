@@ -7,63 +7,62 @@ class ImageCarouselForLogin extends Component {
   constructor() {
     super();
     this.slideIndex = 0;
+    this.carouselImages = new Map();
+    this.carouselDots = new Map();
   }
 
   componentDidMount() {
-    // console.log('should component mount');
     this.startCarouselAnimation();
   };
 
-  // shouldComponentUpdate() {
-  //   this.startCarouselAnimation();
-  // };
-
   startCarouselAnimation() {
-    // console.log('in carousel animation');
     let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+    // let slides = document.getElementsByClassName("mySlides");
+    // let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < this.carouselImages.size; i++) {
+      this.carouselImages.get(i).style.display = "none";  
     }
-    // console.log('this.slideIndex old', this.slideIndex);
+    
     this.slideIndex++;
-    // console.log('this.slideIndex updated', this.slideIndex);
-    if (this.slideIndex > slides.length) {this.slideIndex = 1}    
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    if (this.slideIndex > this.carouselImages.size) {this.slideIndex = 1}
+
+    for (i = 0; i < this.carouselDots.size; i++) {
+      this.carouselDots.get(i).className = this.carouselDots.get(i).className.replace(" active", "");
     }
-    slides[this.slideIndex-1].style.display = "block";  
-    dots[this.slideIndex-1].className += " active";
-    // setTimeout(this.startCarouselAnimation, 2000); // Change image every 2 seconds
+    this.carouselImages.get(this.slideIndex-1).style.display = "block";  
+    this.carouselDots.get(this.slideIndex-1).className += " active";
+    setTimeout(this.startCarouselAnimation.bind(this), 2000); // Change image every 2 seconds
   };
   
 
   render() {
     // const { user } = this.props.auth;
-    const imagesPath = this.props.images;
-    // console.log('props---', {...this.props}, imagesPath);
     // console.log("user name-->",user );
+    const imagesPath = this.props.images;
     return (
       <div className='imageCarouselConatainer slideshow-container'>
-        <h2> ImageCarousel</h2>
-        <div className="mySlides fade">
-          <img src={imagesPath[1]} alt="1"/>
-        </div>
-
-        <div className="mySlides fade">
-          <img src={imagesPath[2]} alt="2"/>
-        </div>
-
-        <div className="mySlides fade">
-          <img src={imagesPath[3]} alt="3"/>
+        <div className="parentElem">
+          {
+            imagesPath.map((elem, index) => {
+              return (
+                <div className="mySlides fade" key={index} ref={c => this.carouselImages.set(index, c)}>
+                  <img src={imagesPath[index]} alt={index}/>
+                </div>
+              );
+            })
+          }
         </div>
 
         <div className='carousel-btn-container'>
-          <span className="dot"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
+          {
+            imagesPath.map((ele, index) => {
+              return (
+                <span className="dot" key={index} ref={c => this.carouselDots.set(index, c)}></span>
+              );
+            })
+          }
         </div>
+        
       </div>
     );
   }
