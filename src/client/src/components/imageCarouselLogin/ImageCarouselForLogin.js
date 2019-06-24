@@ -19,7 +19,9 @@ class ImageCarouselForLogin extends Component {
     let i;
     // let slides = document.getElementsByClassName("mySlides");
     // let dots = document.getElementsByClassName("dot");
+    // console.log('this.carouselImages.', this.carouselImages);
     for (i = 0; i < this.carouselImages.size; i++) {
+      // console.log('this.carouselImages.', this.carouselImages.get(i));
       this.carouselImages.get(i).style.display = "none";  
     }
     
@@ -62,7 +64,7 @@ class ImageCarouselForLogin extends Component {
             })
           }
         </div>
-        
+
       </div>
     );
   }

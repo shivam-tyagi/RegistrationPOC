@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import {configData , templateLayouts, landing_top_carousel_images, landing_bottom_carousel_images} from "../../data/config";
 import ImageCarouselForLogin from "../imageCarouselLogin/ImageCarouselForLogin";
+import Navbar from './Navbar';
 
 class Landing extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Landing extends Component {
   render() {
     return (
       <div style={{ height: "100%", backgroundColor: `${configData.landingPageBg}`, }} className="container valign-wrapper landingPage">
+        <Navbar></Navbar>
         <div className="row">
           <div className="col s12 center-align ">
             <ImageCarouselForLogin images = {landing_top_carousel_images}></ImageCarouselForLogin>

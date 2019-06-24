@@ -6,24 +6,15 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar-fixed">
-        <nav className="z-depth-0" style={{
-          backgroundColor: `${configData.header.headerColor}`,
-        }}>
-          {/* <div className="nav-wrapper white"> */}
-          <div className="nav-wrapper">
-            <Link
-              to="/"
-              style={{
-                fontFamily: "monospace",
-                backgroundColor: `${configData.header.headerLogoBgColor}`,
-              }}
-              className="col s5 brand-logo center black-text"
-            >
-              <i className="material-icons">{configData.header.headerLogo[1]}</i>
-              Registration Portal
-            </Link>
-          </div>
-        </nav>
+        <div className='logo-lading-page'></div>
+        <div className='invitation-landing-page'>Invitation</div>
+        <div className='cards-landing-page'>Cards</div>
+        <div className='party-ideas-landing-page'>Party idea</div>
+        <div className='searchbar-landing-page'></div>
+        {/* <div className="nav-wrapper"> */}
+        <Link to="/signup" className="register-text">Register</Link>
+        <Link to="/login" className="register-text">Login</Link>
+        {/* </div> */}
       </div>
     );
   }

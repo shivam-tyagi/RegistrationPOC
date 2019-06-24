@@ -96,6 +96,51 @@
   border: 2px dashed grey;
 }
 
+.navbar-fixed{
+  top: 0;
+  width: 100%;
+  position: absolute;
+}
+
+.logo-lading-page{
+  width: 30px;
+  height: 40px;
+  border: 1px solid red;
+  display: inline-block;
+}
+
+.invitation-landing-page{
+  display: inline-block;
+  left: 20px;
+  position: relative;
+}
+
+.cards-landing-page {
+  display: inline-block;
+  position: relative;
+  left: 80px;
+}
+
+.party-ideas-landing-page{
+  display: inline-block;
+  position: relative;
+  left: 150px;
+}
+
+.register-text{
+  display: inline-block;
+  position: relative;
+  left: 350px;
+}
+
+.register-text{
+  display: inline-block;
+  position: relative;
+  left: 370px;
+}
+
+
+
 /*-----------IMAGE CAROUSEL-----------*/
 
 * {box-sizing: border-box;}
