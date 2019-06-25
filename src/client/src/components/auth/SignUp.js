@@ -79,17 +79,18 @@ class SignUp extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container signup-page-container" style={{ backgroundColor: `${configData.bodyBackground}`}} >
+      <div className="signup-page-container">
         <div className="row">
           <div className='signin-logo'></div>
           <div className='login-close-btn' onClick={this.closeBtnClickHandler}></div>
           <ImageCarouselForLogin images = {signup_carousel_images}></ImageCarouselForLogin>
-          <div className="col s8 offset-s2 signinTemplateContainer">
+          <div className=" signinTemplateContainer">
             {/* <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
             </Link> */}
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+            <div className="formWraper">
+            <div>
               <h4> Create Account </h4>
               {/* <p className="grey-text text-darken-1">
                 Already have an account? <Link to="/login">Log in</Link>
@@ -97,7 +98,7 @@ class SignUp extends Component {
             </div>
             <form  onSubmit={this.onSubmit}>
               {configData.registrationSettings.showFirstName ? (
-                <div className="input-field col s12">
+                <div className="input-field ">
                   <input required
                     onChange={this.onChange}
                     value={this.state.firstname}
@@ -113,7 +114,7 @@ class SignUp extends Component {
                 </div>
               ) : null}
               {configData.registrationSettings.showLastName ? (
-                <div className="input-field col s12">
+                <div className="input-field">
                   <input required
                     onChange={this.onChange}
                     value={this.state.lastname}
@@ -129,7 +130,7 @@ class SignUp extends Component {
                 </div>     
 
               ) : null}
-              <div className="input-field col s12">
+              <div className="input-field">
                 <input required
                   onChange={this.onChange}
                   value={this.state.email}
@@ -143,7 +144,24 @@ class SignUp extends Component {
                 <label htmlFor="email">Email</label>
                 <span className="red-text">{errors.email}</span>
               </div>
-              <div className="input-field col s12">
+
+              <div className="input-field">
+              <input required
+                onChange={this.onChange}
+                value={this.state.email}
+                error={errors.email}
+                id="email"
+                type="email"
+                className={classnames("", {
+                  invalid: errors.email
+                })}
+              />
+              <label htmlFor="email">Confirm Email</label>
+              <span className="red-text">{errors.email}</span>
+            </div>
+
+
+              <div className="input-field">
                 <input required
                   onChange={this.onChange}
                   value={this.state.password}
@@ -157,7 +175,7 @@ class SignUp extends Component {
                 <label htmlFor="password">Password</label>
                 <span className="red-text">{errors.password}</span>
               </div>
-              <div className="input-field col s12">
+              <div className="input-field">
                 <input required
                   onBlur={this.onBlurConfirmPassword}
                   onChange={this.onChange}
@@ -172,26 +190,27 @@ class SignUp extends Component {
                 <label htmlFor="confirmPassword">Confirm Password</label>
                 <span className="red-text">{errors.confirmPassword}</span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
+              <div className="SignUpBtn" >
+            <button type="submit"  className="btn btn-large waves-effect waves-light hoverable blue accent-3" >
                   Sign up
                 </button>
               </div>
             </form>
-            <div className='separator-line'>or</div>
-            <div className='social-media-icon-container'>Social media icons</div>
+            <div className='separator-line'>
+                      <span>or</span></div>
+            {/* <div className='social-media-icon-container'>Social media icons</div>
             <p className='text-redirection-signup'> Already have an account?
               <Link to="/signup"> Signin</Link>
-            </p>
+            </p> */}
+              <div className="bottomSection">
+              <ul class="social_list">
+                  <li><a href="javascript:void(0)" className="Socialicon googleIcon"></a></li>
+                  <li><a href="javascript:void(0)" className="Socialicon linkedinIcon"></a></li>
+                  <li><a href="javascript:void(0)" className="Socialicon facebookIcon"></a></li>
+                </ul>
+              <p>Already have an account? <a href="javascript:void(0)" className="signUpText">Signin</a></p>
+            </div>
+          </div>
           </div>
         </div>
       </div>
