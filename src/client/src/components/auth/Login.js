@@ -61,76 +61,97 @@ class Login extends Component {
     // console.log('this,--', login_carousel_images);
 
     return (
-      <div className="container loginPage" style={{ backgroundColor: `${configData.bodyBackground}` }}>
+      <div className="container-fluid loginPage">
         <div className="row">
-          <div className='signin-logo'></div>
+          <div className='signin-logo'>
+             
+          </div>
           <div className='login-close-btn' onClick={this.closeBtnClickHandler}></div>
           <ImageCarouselForLogin images = {login_carousel_images}></ImageCarouselForLogin>
-          <div className="col s8 offset-s2" id="loginTemplateContainer">
+          <div className="" id="loginTemplateContainer">
             {/* <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to home
             </Link> */}
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+
+            <div className="formWraper">
+            <div className="">
               <h4>Sign in</h4>
               {/* <p className="grey-text text-darken-1">
                 Don't have an account? <Link to="/register">Register</Link>
               </p> */}
             </div>
             <form  onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+              <div className="input-field">
                 <input required
                   onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
                   id="email"
                   type="email"
+                  placeholder="Email"
                   className={classnames("", {
                     invalid: errors.email || errors.emailnotfound
                   })}
                 />
-                <label htmlFor="email">Email</label>
+                {/* <label htmlFor="email">Email</label> */}
+                  <div class="LeftIcon emailIcon">
+                  </div>
                 <span className="red-text">
                   {errors.email}
                   {errors.emailnotfound}
                 </span>
               </div>
-              <div className="input-field col s12">
+              <div className="input-field">
                 <input required
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
                   id="password"
                   type="password"
+                  placeholder="Password"
                   className={classnames("", {
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                {/* <label htmlFor="password">Password</label> */}
+                <div class="LeftIcon passwordIcon">
+                  </div>
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
                 </span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                <div className="forgotBox">
+                   <a href="javascript:void(0)">Forgot Password ?</a>
+                </div>
+              <div className="">
                 <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
+                 type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
                   Login
                 </button>
               </div>
             </form>
-            <div className='separator-line'>or</div>
-            <div className='social-media-icon-container'>Social media icons</div>
+            <div className='separator-line'>
+                      <span>or</span></div>
+            {/* <div className='social-media-icon-container'>Social media icons</div>
             <p className='text-redirection-signup'> Don't have an account?
               <Link to="/signup">Signup</Link>
-            </p>
+            </p> */}
+
+
+            <div className="bottomSection">
+              <ul class="social_list">
+                  <li><a href="javascript:void(0)" className="Socialicon googleIcon"></a></li>
+                  <li><a href="javascript:void(0)" className="Socialicon linkedinIcon"></a></li>
+                  <li><a href="javascript:void(0)" className="Socialicon facebookIcon"></a></li>
+                </ul>
+              <p>Don't have an account? <a href="javascript:void(0)" className="signUpText">Signup</a></p>
+            </div>
+
+           </div>
+
           </div>
         </div>
       </div>

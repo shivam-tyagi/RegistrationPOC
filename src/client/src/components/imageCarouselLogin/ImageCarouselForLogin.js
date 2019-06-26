@@ -49,6 +49,8 @@ class ImageCarouselForLogin extends Component {
               return (
                 <div className="mySlides fade" key={index} ref={c => this.carouselImages.set(index, c)}>
                   <img src={imagesPath[index]} alt={index}/>
+                  <h6>Lorem Ipsum</h6>
+                  <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
                 </div>
               );
             })
