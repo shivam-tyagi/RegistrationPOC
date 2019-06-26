@@ -43,14 +43,15 @@ class ImageCarouselForLogin extends Component {
     const imagesPath = this.props.images;
     return (
       <div className='imageCarouselConatainer slideshow-container'>
+        <h2>Welcome to eCards</h2>
         <div className="parentElem">
           {
             imagesPath.map((elem, index) => {
               return (
                 <div className="mySlides fade" key={index} ref={c => this.carouselImages.set(index, c)}>
-                  <img src={imagesPath[index]} alt={index}/>
-                  <h6>Lorem Ipsum</h6>
-                  <p>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                  <img src={imagesPath[index].imageSrc} alt={index}/>
+                  <h6>{imagesPath[index].headingText}</h6>
+                  <p>{imagesPath[index].brief}</p>
                 </div>
               );
             })

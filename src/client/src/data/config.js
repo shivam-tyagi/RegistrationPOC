@@ -93,7 +93,19 @@ export const templateLayouts = [{
   }
 ];
 
-export const login_carousel_images = [ login_carousel_image1, login_carousel_image2, login_carousel_image3 ];
+export const login_carousel_images = [ {
+  imageSrc: login_carousel_image1,
+  headingText: 'Lorem Ipsum',
+  brief: 'dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+},{
+  imageSrc: login_carousel_image2,
+  headingText: 'Lorem Ipsum',
+  brief: 'dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+},{
+  imageSrc: login_carousel_image3,
+  headingText: 'Lorem Ipsum',
+  brief: 'dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+}];
 
 export const signup_carousel_images = [ signup_carousel_image1, signup_carousel_image2, signup_carousel_image3 ];
 
