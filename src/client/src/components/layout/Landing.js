@@ -13,7 +13,7 @@ class Landing extends Component {
   render() {
     return (
       <div style={{ height: "100%", backgroundColor: `${configData.landingPageBg}`, }} className="container valign-wrapper landingPage">
-        <Navbar></Navbar>
+        <Navbar {...this.props}></Navbar>
         <div className="row">
           <div className="col s12 center-align ">
             <ImageCarouselForLogin images = {landing_top_carousel_images}></ImageCarouselForLogin>
