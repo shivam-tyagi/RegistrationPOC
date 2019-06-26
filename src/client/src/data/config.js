@@ -107,11 +107,35 @@ export const login_carousel_images = [ {
   brief: 'dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
 }];
 
-export const signup_carousel_images = [ signup_carousel_image1, signup_carousel_image2, signup_carousel_image3 ];
+export const signup_carousel_images = [ {
+  imageSrc: signup_carousel_image1,
+  headingText: 'Lorem Ipsum',
+  brief: 'dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+},{
+  imageSrc: signup_carousel_image2,
+  headingText: 'Lorem Ipsum',
+  brief: 'dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+},{
+  imageSrc: signup_carousel_image3,
+  headingText: 'Lorem Ipsum',
+  brief: 'dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.'
+} ];
 
-export const landing_top_carousel_images = [ landing_top_carousel_image1, landing_top_carousel_image2, landing_top_carousel_image3 ];
+export const landing_top_carousel_images = [ {
+  imageSrc: landing_top_carousel_image1,
+}, {
+  imageSrc: landing_top_carousel_image2,
+}, {
+  imageSrc: landing_top_carousel_image3,
+} ];
 
-export const landing_bottom_carousel_images = [ landing_bottom_carousel_image1, landing_bottom_carousel_image2, landing_bottom_carousel_image3 ];
+export const landing_bottom_carousel_images = [ {
+  imageSrc: landing_bottom_carousel_image1,
+}, {
+  imageSrc: landing_bottom_carousel_image2,
+}, {
+  imageSrc: landing_bottom_carousel_image3,
+} ];
 
 
 export default {};

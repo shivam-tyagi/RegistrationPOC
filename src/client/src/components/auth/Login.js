@@ -94,7 +94,7 @@ class Login extends Component {
                   })}
                 />
                 {/* <label htmlFor="email">Email</label> */}
-                  <div class="LeftIcon emailIcon">
+                  <div className="LeftIcon emailIcon">
                   </div>
                 <span className="red-text">
                   {errors.email}
@@ -114,7 +114,7 @@ class Login extends Component {
                   })}
                 />
                 {/* <label htmlFor="password">Password</label> */}
-                <div class="LeftIcon passwordIcon">
+                <div className="LeftIcon passwordIcon">
                   </div>
                 <span className="red-text">
                   {errors.password}
@@ -142,7 +142,7 @@ class Login extends Component {
 
 
             <div className="bottomSection">
-              <ul class="social_list">
+              <ul className="social_list">
                   <li><a href="javascript:void(0)" className="Socialicon googleIcon"></a></li>
                   <li><a href="javascript:void(0)" className="Socialicon linkedinIcon"></a></li>
                   <li><a href="javascript:void(0)" className="Socialicon facebookIcon"></a></li>

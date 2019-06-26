@@ -39,11 +39,15 @@ class ImageCarouselForLogin extends Component {
 
   render() {
     // const { user } = this.props.auth;
-    // console.log("user name-->",user );
+    console.log("user name-->",this.props.landingPage );
     const imagesPath = this.props.images;
+    const _showHeading = this.props.landingPage;
     return (
       <div className='imageCarouselConatainer slideshow-container'>
-        <h2>Welcome to eCards</h2>
+        { !_showHeading ? (
+          <h2>Welcome to eCards</h2>
+        ) : null }
+        
         <div className="parentElem">
           {
             imagesPath.map((elem, index) => {

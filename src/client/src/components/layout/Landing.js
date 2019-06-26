@@ -16,7 +16,7 @@ class Landing extends Component {
         <Navbar {...this.props}></Navbar>
         <div className="row">
           <div className="col s12 center-align ">
-            <ImageCarouselForLogin images = {landing_top_carousel_images}></ImageCarouselForLogin>
+            <ImageCarouselForLogin images = {landing_top_carousel_images} landingPage='true'></ImageCarouselForLogin>
             <div className="trendingImageContainer">
               <div className="trendingImageElems">
                 {
@@ -34,7 +34,7 @@ class Landing extends Component {
                 }
               </div>
             </div>
-            <ImageCarouselForLogin images = {landing_bottom_carousel_images}></ImageCarouselForLogin>
+            <ImageCarouselForLogin images = {landing_bottom_carousel_images} landingPage='true'></ImageCarouselForLogin>
             <div className='landing-page-social-media-icons'>
               Social Media Icons
             </div>
