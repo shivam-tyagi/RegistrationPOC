@@ -18,6 +18,7 @@ class Landing extends Component {
           <div className="col s12 center-align ">
             <ImageCarouselForLogin images = {landing_top_carousel_images} landingPage='true'></ImageCarouselForLogin>
             <div className="trendingImageContainer">
+              <div className='trending-text-label'>Trending</div>
               <div className="trendingImageElems">
                 {
                   templateLayouts.map((template, index) => {
