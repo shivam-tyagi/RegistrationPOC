@@ -27,6 +27,7 @@ import landing_bottom_carousel_image1 from '../assets/carousel/landing_bottom/1.
 import landing_bottom_carousel_image2 from '../assets/carousel/landing_bottom/2.png';
 import landing_bottom_carousel_image3 from '../assets/carousel/landing_bottom/3.png';
 
+
 export const configData = {
   header: {
     headerColor: '#f05c27',
@@ -90,6 +91,36 @@ export const templateLayouts = [{
     isDrafted: false,
     isCompleted: false,
 
+  },{
+    name:'template6',
+    template_image: image_template6,
+    template_id: 6,
+    template_name:'Easter Egg',
+    template_description:'26 March Easter Egg',
+    isFavourite: false,
+    isDrafted: false,
+    isCompleted: false,
+
+  },{
+    name:'template7',
+    template_image: image_template7,
+    template_id: 7,
+    template_name:'Easter Egg',
+    template_description:'26 March Easter Egg',
+    isFavourite: false,
+    isDrafted: false,
+    isCompleted: false,
+
+  },{
+    name:'template8',
+    template_image: image_template8,
+    template_id: 8,
+    template_name:'Easter Egg',
+    template_description:'26 March Easter Egg',
+    isFavourite: false,
+    isDrafted: false,
+    isCompleted: false,
+
   }
 ];
 
@@ -136,6 +167,9 @@ export const landing_bottom_carousel_images = [ {
 }, {
   imageSrc: landing_bottom_carousel_image3,
 } ];
+
+
+
 
 
 export default {};

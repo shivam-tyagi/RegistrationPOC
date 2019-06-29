@@ -80,7 +80,7 @@ class SignUp extends Component {
 
     return (
       <div className="signup-page-container">
-        <div className="row">
+        <div className="clearfix">
           <div className='signin-logo'></div>
           <div className='login-close-btn' onClick={this.closeBtnClickHandler}></div>
           <ImageCarouselForLogin images = {signup_carousel_images}></ImageCarouselForLogin>

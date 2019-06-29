@@ -61,8 +61,8 @@ class Login extends Component {
     // console.log('this,--', login_carousel_images);
 
     return (
-      <div className="container-fluid loginPage">
-        <div className="row">
+      <div className="loginPage">
+        <div className="clearfix">
           <div className='signin-logo'>
              
           </div>

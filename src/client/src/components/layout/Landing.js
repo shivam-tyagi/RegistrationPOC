@@ -12,12 +12,19 @@ class Landing extends Component {
 
   render() {
     return (
-      <div style={{ height: "100%", backgroundColor: `${configData.landingPageBg}`, }} className="container valign-wrapper landingPage">
+      <div style={{ height: "100%" }} className=" valign-wrapper landingPage">
         <Navbar {...this.props}></Navbar>
-        <div className="row">
-          <div className="col s12 center-align ">
-            <ImageCarouselForLogin images = {landing_top_carousel_images} landingPage='true'></ImageCarouselForLogin>
+        <div className="">
+          <div className="center-align ">
+             <div className="content_section">
+             <div className="contain upperBanner">
+             <ImageCarouselForLogin images = {landing_top_carousel_images} landingPage='true'></ImageCarouselForLogin>
+               </div>
+           
             <div className="trendingImageContainer">
+            <div className="contain"> 
+              <div className="tradingInner">
+               <div className="trading-cell">
               <div className='trending-text-label'>Trending</div>
               <div className="trendingImageElems">
                 {
@@ -33,13 +40,52 @@ class Landing extends Component {
                     );
                   })
                 }
+                </div>
+                  </div>
+                  </div>
               </div>
             </div>
-            <ImageCarouselForLogin images = {landing_bottom_carousel_images} landingPage='true'></ImageCarouselForLogin>
-            <div className='landing-page-social-media-icons'>
-              Social Media Icons
             </div>
-            <div className='landing-page-copyright-text'> Copy right text</div>
+            
+            
+            
+            <div className="clearfix section_banner">
+              <div className="contain">
+            <ImageCarouselForLogin images = {landing_bottom_carousel_images} landingPage='true'></ImageCarouselForLogin>
+            </div>
+            </div>
+            
+            <div className="footer">
+             <div className="contain">
+              <div className='landing-page-social-media-icons'>
+               <div className="bottomSection clearfix">
+                  <ul className="footer_social_list">
+                    <li><a href="javascript:void(0)" className="Socialicon googleIcon"></a></li>
+                    <li><a href="javascript:void(0)" className="Socialicon linkedinIcon"></a></li>
+                    <li><a href="javascript:void(0)" className="Socialicon facebookIcon"></a></li>
+                  </ul>
+                  
+                  <ul className="googleStroe">
+                  <li><a href="javascript:void(0)" className="googlePic"></a></li>
+                  <li><a href="javascript:void(0)" className="storePic"></a></li>
+                    </ul>
+                 </div>
+          </div>
+            <div className='landing-page-copyright-text'>
+             <p className="demoCopy">© 2019 Demo Company . All Rights Reserved.</p>
+             <p>Demo Company are trademarks of Demo Company in the United States and other countries. The Demo Company logo and all other Demo-related trademarks are trademarks of Demo Comapny,Inc. Please use this mark only to refer to our services. Users of website designs must be of legal drinking age. </p>
+              <div className="footerBottom">
+                <a href="javascript:void(0)">Privacy Policy</a>
+                <a href="javascript:void(0)">Terms of Service</a>
+              </div>
+            </div>
+            </div>
+            
+            </div>
+
+
+
+           
             {/* <h3>This is a home page</h3>
             <h4>
               <b>Register</b> yourself with us.{" "}
