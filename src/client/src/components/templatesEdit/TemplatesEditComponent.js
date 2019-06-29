@@ -6,7 +6,7 @@ import Navbar from '../layout/Navbar';
 class TemplatesEditComponent extends Component {
 
   constructor(props) {
-    console.log('this.props---', props.editIndex);
+    // console.log('this.props---', props.editIndex);
     super();
     this.editIndex = props.editIndex;
     this.state = {
@@ -47,7 +47,7 @@ class TemplatesEditComponent extends Component {
       eventMessageFromHost: this.state.eventMessageFromHost,
     };
 
-    console.log('template edit info**', templateEditInfo);
+    // console.log('template edit info**', templateEditInfo);
 
     // this.props.registerUser(newUser, this.props.history);
   };
@@ -55,7 +55,7 @@ class TemplatesEditComponent extends Component {
   render() {
     const { user } = this.props.auth;
     const landingPageTemplateData = this.props.landingPageTemplateData;
-    console.log('edit index-----', this.props.landingPageTemplateData, this.props);
+    // console.log('edit index-----', this.props.landingPageTemplateData, this.props);
     return (
       <div className='templates-edit-page'>
         <Navbar {...this.props}></Navbar>
