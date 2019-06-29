@@ -69,6 +69,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/actions";
 import Dashboard from "./components/dashboard/Dashboard";
+import TemplatesEditComponent from './components/templatesEdit/TemplatesEditComponent';
 import PrivateRoute from "./components/private-route/PrivateRoute";
 
 // Check for token to keep user logged in
@@ -100,6 +101,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/edit" component={TemplatesEditComponent} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>

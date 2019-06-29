@@ -1,13 +1,30 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import {configData , templateLayouts, landing_top_carousel_images, landing_bottom_carousel_images} from "../../data/config";
 import ImageCarouselForLogin from "../imageCarouselLogin/ImageCarouselForLogin";
 import Navbar from './Navbar';
+import { editTemplateValue, landingPageTemplatesData } from '../../actions/actions';
 
 class Landing extends Component {
   constructor(props) {
     super(props);
     // this.onChange = this.onChange.bind(this);
+    this.templatesClickHandler = this.templatesClickHandler.bind(this);
+  }
+
+  componentDidMount() {
+    const { defaultTemplatesData } = this.props;
+    defaultTemplatesData(templateLayouts);
+  }
+
+  templatesClickHandler (templateInd){
+    // console.log('templates cick handler', this.props);
+    const { selectedTemplateIndex } = this.props;
+    selectedTemplateIndex(templateInd);
+    // if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/edit");
+    // }
   }
 
   render() {
@@ -24,7 +41,7 @@ class Landing extends Component {
                   templateLayouts.map((template, index) => {
                     return (
                       // eslint-disable-next-line react/no-array-index-key
-                      <div key={index} className="image-container">
+                      <div key={index} className="image-container" onClick={() => this.templatesClickHandler(index)}>
                         <img src={template.template_image} alt="img"></img>
                         <span className='template-name'>{template.template_name}</span>
                         <span className='template-description'>{template.template_description}</span>
@@ -81,4 +98,27 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectedTemplateIndex: (value) => {
+      dispatch(editTemplateValue(value));
+      // console.log('selectedTemplateIndex', value);
+    },
+    defaultTemplatesData: (value) => {
+      dispatch(landingPageTemplatesData(value));
+    },
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Landing);
+
+
+// export default Landing;

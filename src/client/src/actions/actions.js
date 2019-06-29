@@ -5,6 +5,8 @@ import jwt_decode from "jwt-decode";
 export const GET_ERRORS = "GET_ERRORS";
 export const USER_LOADING = "USER_LOADING";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const TEMPLATE_TO_EDIT = "TEMPLATE_TO_EDIT";
+export const LANDING_PAGE_TEMPLATES_DATA = "LANDING_PAGE_TEMPLATES_DATA";
 
 export const registerUser = (userData, history) => dispatch => {
   console.log("user data-->",userData);
@@ -68,3 +70,18 @@ export const logoutUser = () => dispatch => {
   // Set current user to empty object {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
 };
+
+export const editTemplateValue = value => {
+  // console.log('value---*****', value);
+  return {
+    type: TEMPLATE_TO_EDIT,
+    payload: value,
+  }
+};
+
+export const landingPageTemplatesData = (value) => {
+  return {
+    type: LANDING_PAGE_TEMPLATES_DATA,
+    payload: value,
+  }
+}

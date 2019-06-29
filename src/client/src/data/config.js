@@ -80,6 +80,18 @@ export const templateLayouts = [{
     isFavourite: false,
     isDrafted: false,
     isCompleted: false,
+    date: {
+      eventTitle: 'title 4',
+      eventFestival: 'Festival 4',
+      eventHostedby: 'Host 4',
+      eventMobilenumber: 'Mobile 4',
+      eventDate: 'Date 4',
+      eventTime: 'Time 4',
+      eventEndTime: 'End Time 4',
+      eventLocation: 'Location 4',
+      eventAddress: 'Address 4',
+      eventMessageFromHost: 'Host Message 4',
+    }
   },{
     name:'template5',
     template_image: image_template5,
@@ -89,7 +101,18 @@ export const templateLayouts = [{
     isFavourite: false,
     isDrafted: false,
     isCompleted: false,
-
+    date: {
+      eventTitle: 'title 5',
+      eventFestival: 'Festival 5',
+      eventHostedby: 'Host 5',
+      eventMobilenumber: 'Mobile 5',
+      eventDate: 'Date 5',
+      eventTime: 'Time 5',
+      eventEndTime: 'End Time 5',
+      eventLocation: 'Location 5',
+      eventAddress: 'Address 5',
+      eventMessageFromHost: 'Host Message 5',
+    }
   }
 ];
 

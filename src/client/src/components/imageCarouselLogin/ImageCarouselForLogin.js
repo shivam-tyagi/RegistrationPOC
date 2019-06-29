@@ -12,6 +12,7 @@ class ImageCarouselForLogin extends Component {
   }
 
   componentDidMount() {
+    // console.log('component did mount---');
     this.startCarouselAnimation();
   };
 
@@ -22,24 +23,32 @@ class ImageCarouselForLogin extends Component {
     // console.log('this.carouselImages.', this.carouselImages);
     for (i = 0; i < this.carouselImages.size; i++) {
       // console.log('this.carouselImages.', this.carouselImages.get(i));
-      this.carouselImages.get(i).style.display = "none";  
+      if(this.carouselImages.get(i)){
+        this.carouselImages.get(i).style.display = "none";  
+      }
     }
     
     this.slideIndex++;
     if (this.slideIndex > this.carouselImages.size) {this.slideIndex = 1}
 
     for (i = 0; i < this.carouselDots.size; i++) {
-      this.carouselDots.get(i).className = this.carouselDots.get(i).className.replace(" active", "");
+      if(this.carouselDots.get(i)) {
+        this.carouselDots.get(i).className = this.carouselDots.get(i).className.replace(" active", "");
+      }
     }
-    this.carouselImages.get(this.slideIndex-1).style.display = "block";  
-    this.carouselDots.get(this.slideIndex-1).className += " active";
+    if(this.carouselImages.get(this.slideIndex-1)){
+      this.carouselImages.get(this.slideIndex-1).style.display = "block";
+    }
+    if(this.carouselDots.get(this.slideIndex-1)){
+      this.carouselDots.get(this.slideIndex-1).className += " active";
+    }
     setTimeout(this.startCarouselAnimation.bind(this), 2000); // Change image every 2 seconds
   };
   
 
   render() {
     // const { user } = this.props.auth;
-    console.log("user name-->",this.props.landingPage );
+    // console.log("user name-->",this.props.landingPage );
     const imagesPath = this.props.images;
     const _showHeading = this.props.landingPage;
     return (

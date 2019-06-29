@@ -4,7 +4,7 @@ import {configData} from '../../data/config';
 
 class Navbar extends Component {
   render() {
-    console.log('props------ to check', this.props);
+    // console.log('props------ to check', this.props);
     return (
       <div className="navbar-fixed">
         <div className='logo-lading-page'></div>
