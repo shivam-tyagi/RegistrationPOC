@@ -147,7 +147,7 @@ class Login extends Component {
                   <li><a href="javascript:void(0)" className="Socialicon linkedinIcon"></a></li>
                   <li><a href="javascript:void(0)" className="Socialicon facebookIcon"></a></li>
                 </ul>
-              <p>Don't have an account? <a href="javascript:void(0)" className="signUpText">Signup</a></p>
+                           <p>Don't have an account? <Link to="/signup" className="signUpText">Signup</Link></p>
             </div>
 
            </div>

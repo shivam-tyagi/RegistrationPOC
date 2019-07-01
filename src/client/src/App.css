@@ -737,6 +737,322 @@ to {
 	bottom: 26px;
 }
 /*Login Page*/
+
+/****** Edit Template ******/
+.template-edit-right-container{
+	width: 50%;
+	position: absolute;
+	right: 0;
+}
+
+.template-edit-left-container{
+	width: 50%;
+	position: absolute;
+	left: 0;
+}
+
+
+
+.templates-edit-page .template-edit-container{
+	height:380px;
+	width: 100%;
+	padding:0 30px;
+}
+
+.template-carousel-image{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	margin: 0 20px 0 0;
+}
+
+.templateEditLeftSideBtn {
+width: 20px;
+display: inline-block;
+background: black;
+position: absolute;
+left: 14px;
+top: 0px;
+height: 101px;
+background: rgba(0 , 0 , 0 , 0.3) url("assets/arrowLeft.png") no-repeat center center;
+}
+
+.templateEditRightSideBtn {
+width: 20px;
+display: inline-block;
+background: black;
+position: absolute;
+right: 14px;
+top: 0px;
+height: 101px;
+background: rgba(0 , 0 , 0 , 0.3) url("assets/imageRight.png") no-repeat center center;
+}
+.templates-edit-page .template-carousel {
+	height: auto;
+position: relative;
+width: 100%;
+padding: 0 15px;
+margin:20px 0; 
+}
+.templates-edit-page .template-edit-container-text{
+	padding:0 30px;
+	margin:0 0 10px;
+}
+.templates-edit-page .template-edit-container-text span{
+float:right;
+color:#333333;
+font-size:14px;
+font-weight:400;
+font-family: 'Nunito', sans-serif;
+}
+.template-edit-container-text strong{
+float:left;
+color:#2ECC71;
+font-size:14px;
+font-weight:700;
+font-family: 'Nunito', sans-serif;
+}
+.templates-edit-page .templates-carousel-container{
+	white-space: nowrap;
+    overflow: auto;
+}
+.templates-edit-page .template-edit-bg {
+	max-height:100%;
+	max-width:100%;
+	width:100%;
+	height:auto;
+}
+
+.templates-edit-page .navbar-fixed {
+	background: #2ecc71;
+	padding: 8px 10px;
+	height: auto;
+}
+.templates-edit-page .navbar-fixed.active {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+.templates-edit-page .navbar-fixed.active .searchbar-landing-page {
+	display: none;
+}
+.templates-edit-page .logo-lading-page {
+	background: url("assets/loginPage/logo.png") no-repeat left top;
+	float: left;
+	width: 67px;
+	height: 38px;
+	float: left;
+	display: inline-block;
+}
+.templates-edit-page .menu {
+	float: left;
+	margin: 5px 0 0 46px;
+	padding: 0;
+}
+.templates-edit-page .menu li {
+	display: inline-block;
+	color: #fff;
+}
+.templates-edit-page .menu li a {
+	display: inline-block;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 700;
+	padding: 0 8px;
+	vertical-align: middle;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+.templates-edit-page .menu li:first-child a {
+	padding-left: 0;
+}
+.templates-edit-page .menu li:last-child a {
+	padding-right: 0;
+}
+.templates-edit-page .headerRight {
+	float: right;
+	margin-top: 5px;
+}
+.templates-edit-page .headerRight a {
+	vertical-align: middle;
+	display: inline-block;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+.templates-edit-page .headerRight span {
+	vertical-align: middle;
+	display: inline-block;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	margin: 0 8px;
+}
+.templates-edit-page .searchbar-landing-page {
+	float: left;
+	position: relative;
+	margin: 0 25px 0 0;
+}
+.templates-edit-page .searchbar-landing-page input, .templates-edit-page .searchbar-landing-page input:focus {
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #fff;
+	font-size: 12px;
+	color: #fff;
+	margin: 0;
+	border-radius: 20px;
+	padding: 0 43px 0 15px;
+	box-sizing: border-box;
+	box-shadow: none;
+	transition: none;
+	-webkit-box-shadow: none;
+	-webkit-transition: none;
+	-moz-box-shadow: none;
+	-o-transition: none;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 700;
+}
+.templates-edit-page .searchbar-landing-page input::-webkit-input-placeholder {/* Edge */
+	color: #fff;
+}
+
+.templates-edit-page .searchbar-landing-page input:-ms-input-placeholder {/* Internet Explorer 10-11 */
+	color: #fff;
+}
+
+.templates-edit-page .searchbar-landing-page input::placeholder {
+	color: #fff;
+}
+.templates-edit-page .searchbar-landing-page i {
+	width: 12px;
+	height: 12px;
+	background: url("assets/search.png") no-repeat left top;
+	display: inline-block;
+	position: absolute;
+	right: 11px;
+	top: 7px;
+}
+.templates-edit-page .upperHead{
+ background: rgba(46,204,113,.8);
+padding: 5px 50px;
+}
+.templates-edit-page .upperHead .headIcon
+{
+display:inline-block;
+vertical-align: middle;
+background: url("assets/templateEdit/arrow.png") no-repeat left top;
+width:5px;
+height:8px;
+margin-right:10px;
+}
+.templates-edit-page .upperHead  a{
+display:inline-block;
+vertical-align: middle;
+color:#fff;
+font-size:14px;
+font-family: 'Nunito', sans-serif;
+font-weight: 700;
+}
+
+.templates-edit-page .template-edit-right-container , .templates-edit-page .template-edit-left-container
+{
+	float:left;
+	width:60%;
+}
+.templates-edit-page .template-edit-right-container {
+width:40%;
+padding:40px 20px;
+box-shadow: -3px 0px 4px -1px #ccc;
+-moz-box-shadow: -3px 0px 4px -1px #ccc;
+-webkit-box-shadow: -3px 0px 4px -1px #ccc;
+}
+.templates-edit-page .template-edit-right-container .template-form-heading
+{
+font-family: 'Nunito', sans-serif;
+font-weight: 700;
+color:#2ECC71;
+text-align: center;
+margin:0 0 25px;
+font-size:24px;	
+}
+.templates-edit-page .input-field
+{
+	margin:0 0 20px;
+	padding:0;
+	width: 48%;
+	 float: left;
+}
+.templates-edit-page .input-field input , .templates-edit-page .input-field input:focus {
+   
+    margin: 0;
+    padding: 0;
+    width:100%;
+	height: 35px !important;
+	border: 1px solid #f2f2f2 !important;
+	border-radius: 25px !important;
+	color: #000 !important;
+	line-height: 35px !important;
+	margin: 0 !important;
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	padding: 0 40px !important;
+	box-sizing: border-box !important;
+}
+.templates-edit-page .input-field:nth-child(2n)
+{
+	float:right;
+}
+.templates-edit-page .input-field > label {
+    top: -6px;
+    left: 10px;
+}
+.templates-edit-page .input-field.input-fieldName , .templates-edit-page .input-field.input-fieldAddress , .templates-edit-page .input-field.input-fieldMessage {
+float:none;
+clear:both;
+width:100%;
+}
+.templates-edit-page .input-field.input-fieldMessage input{
+height:170px !important;
+line-height: 22px !important;
+}
+.templates-edit-page .input-field > label:not(.label-icon).active{
+	top: 4px;
+left: 17px;
+background: #fff;
+padding: 0 10px;
+}
+.templates-edit-page .submitFormBtns{
+	text-align:center;
+}
+.templates-edit-page .submitFormBtns button{
+background: #27AE60 !important;
+width:170px;
+display: inline-block;
+height: 35px;
+line-height: 35px;
+padding: 0;
+border-radius: 30px;
+box-shadow: none;
+margin:0;
+font-family: 'Nunito', sans-serif;
+color: #fff;
+vertical-align: middle;
+border: 1px solid #27AE60;
+margin: 0 8px;
+text-transform: capitalize;
+}
+.templates-edit-page .submitFormBtns button.saveButton{
+background:#fff !important;
+color:#27AE60;
+}
+/*Template Page End*/
 @media only screen and (max-width: 1229px) {
 	.landingPage .contain {
 		max-width: 1024px;
@@ -744,6 +1060,8 @@ to {
 	.landingPage .tradingInner {
 		padding: 70px 50px;
 	}
+	/*Template Page Start*/
+/*Template Page End*/
 }
 @media only screen and (max-width: 1200px) {
 	/*Login Page Start*/
@@ -762,6 +1080,12 @@ to {
 	.landingPage .image-container {
 		width: 180px;
 	}
+	/*Template Page Start*/
+	.templates-edit-page .submitFormBtns button
+	{
+		width:140px;
+	}
+    /*Template Page End*/
 
 }
 @media only screen and (max-width: 1024px) {
@@ -770,6 +1094,8 @@ to {
 		width: 390px;
 	}
 	/*Login Page End*/
+	/*Template Page Start*/
+/*Template Page End*/
 }
 @media only screen and (max-width: 992px) {
 	/*Login Page Start*/
@@ -791,6 +1117,8 @@ to {
 	}
 
 	/*Signup Page End*/
+	/*Template Page Start*/
+/*Template Page End*/
 }
 
 @media only screen and (max-width: 300px) {
@@ -799,63 +1127,3 @@ to {
 	}
 }
 
-/****** Edit Template ******/
-.template-edit-right-container{
-	width: 50%;
-	position: absolute;
-	right: 0;
-}
-
-.template-edit-left-container{
-	width: 50%;
-	position: absolute;
-	left: 0;
-}
-
-.template-carousel {
-	height: 150px;
-	position: absolute;
-	border: 1px dashed red;
-	width: 100%;
-}
-
-.template-edit-container{
-	height: 500px;
-	position: absolute;
-	border: 1px dashed red;
-	width: 100%;
-	top: 160px;
-}
-
-.template-carousel-image{
-	width: 100px;
-	height: 100px;
-	display: inline-block;
-}
-
-.templateEditLeftSideBtn {
-	width: 20px;
-	height: 20px;
-	display: inline-block;
-	background: red;
-}
-
-.templateEditRightSideBtn {
-	width: 20px;
-	height: 20px;
-	display: inline-block;
-	background: black;
-	position: absolute;
-	right: 0;
-}
-
-.template-edit-bg {
-	width: 500px;
-	height: 400px;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	position: absolute;
-}

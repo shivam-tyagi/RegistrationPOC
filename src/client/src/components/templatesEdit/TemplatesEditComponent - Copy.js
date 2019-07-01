@@ -62,9 +62,7 @@ class TemplatesEditComponent extends Component {
         <div className="upperHead">
                  <a href="javascript:void(0)"><i class="headIcon"></i>Card List</a>
         </div>
-         
-         <div className="clearfix">
-
+        <h2>edit page***</h2>
         <div className='template-edit-left-container'>
           <div className='template-carousel'>
             <div className='templateEditLeftSideBtn'/>
@@ -79,16 +77,8 @@ class TemplatesEditComponent extends Component {
             </div>
             <div className='templateEditRightSideBtn'/>
           </div>
-          <div className="template-edit-container-text clearfix">
-          <strong>
-          Christmas Celibration
-          </strong>
-           <span>
-           Descrption of card
-          </span>
-          </div>
           <div className='template-edit-container'>
-              <img className='template-edit-bg' src={landingPageTemplateData[this.editIndex].template_image} alt='edit'/>
+              // <img className='template-edit-bg' src={landingPageTemplateData[this.editIndex].template_image} alt='edit'/>
           </div>
         </div>
 
@@ -96,7 +86,7 @@ class TemplatesEditComponent extends Component {
           <div className='template-edit-form-container'>
             <div className='template-form-heading'>Enter Details</div>
             <div className='template-edit-form'>
-              <form  onSubmit={this.onSubmit} className="clarfix">
+              <form  onSubmit={this.onSubmit}>
                   <div className="input-field ">
                     <input required id="eventTitle" type="text"/>
                     <label htmlFor="eventTitle">Event Title *</label>
@@ -132,36 +122,31 @@ class TemplatesEditComponent extends Component {
                     <label htmlFor="eventEndTime">Event End Time</label>
                   </div>
 
-                  <div className="input-field input-fieldName">
+                  <div className="input-field">
                     <input id="eventLocation" type="text"/>
                     <label htmlFor="eventLocation">Location Name</label>
                   </div>
 
-                  <div className="input-field input-fieldAddress">
+                  <div className="input-field">
                     <input id="eventAddress" type="text"/>
                     <label htmlFor="eventAddress">Address</label>
                   </div>
 
-                  <div className="input-field input-fieldMessage">
+                  <div className="input-field">
                     <input id="eventMessageFromHost" type="text"/>
                     <label htmlFor="eventMessageFromHost">Host Message</label>
                   </div>
 
-                  <div className="submitFormBtns " >
-                    
-                    <button className='save-draft-btn saveButton'>Save Draft</button>
-
-
-                    <button type="submit"  className=" btn btn-large waves-effect waves-light hoverable blue accent-3" >
+                  <div className="submitFormBtns" >
+                    <button type="submit"  className="btn btn-large waves-effect waves-light hoverable blue accent-3" >
                       Continue
                     </button>
+                    <button className='save-draft-btn'>Save Draft</button>
                   </div>
               </form>
             </div>
           </div>
         </div>
-         </div>
-
       </div>
     );
   }
