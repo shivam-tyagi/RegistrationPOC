@@ -81,7 +81,7 @@ export const templateLayouts = [{
     isFavourite: false,
     isDrafted: false,
     isCompleted: false,
-    date: {
+    data: {
       eventTitle: 'title 4',
       eventFestival: 'Festival 4',
       eventHostedby: 'Host 4',
@@ -102,7 +102,7 @@ export const templateLayouts = [{
     isFavourite: false,
     isDrafted: false,
     isCompleted: false,
-    date: {
+    data: {
       eventTitle: 'title 5',
       eventFestival: 'Festival 5',
       eventHostedby: 'Host 5',

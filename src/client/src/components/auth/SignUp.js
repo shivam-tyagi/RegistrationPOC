@@ -193,7 +193,8 @@ class SignUp extends Component {
                   <li><a href="javascript:void(0)" className="Socialicon linkedinIcon"></a></li>
                   <li><a href="javascript:void(0)" className="Socialicon facebookIcon"></a></li>
                 </ul>
-                <p> Already have an account? <Link to="/signup" className="signUpText"> Signin</Link> </p>
+                <p> Already have an account? <Link to="/login" className="signUpText"> Signin</Link> </p>
+
             </div>
           </div>
           </div>
