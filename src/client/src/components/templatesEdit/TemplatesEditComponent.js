@@ -114,14 +114,14 @@ class TemplatesEditComponent extends Component {
             </div>
             <div className='template-edit-container'>
                 <img className='template-edit-bg' src={landingPageTemplateData[this.editIndex].template_image} alt='edit'/>
-                <div className='hostedby-edit-image'>Host: {this.state.eventHostedby}</div>
-                <div className='festival-edit-image'>Festival: {this.state.eventFestival}</div>
-                <div className='mobilenumber-edit-image'>Mobile no. {this.state.eventMobilenumber}</div>
-                <div className='eventdate-edit-image'>Date: {this.state.eventDate}</div>
-                <div className='eventtime-edit-image'>Time: {this.state.eventTime}</div>
-                <div className='location-edit-image'>Location: {this.state.eventLocation}</div>
-                <div className='address-edit-image'>Address: {this.state.eventAddress}</div>
-                <div className='hostmsg-edit-image'>Message: {this.state.eventMessageFromHost}</div>
+                <div className='hostedby-edit-image bannerText'>Host: {this.state.eventHostedby}</div>
+                <div className='festival-edit-image bannerText'>Festival: {this.state.eventFestival}</div>
+                <div className='mobilenumber-edit-image bannerText'>Mobile no. {this.state.eventMobilenumber}</div>
+                <div className='eventdate-edit-image bannerText'>Date: {this.state.eventDate}</div>
+                <div className='eventtime-edit-image bannerText'>Time: {this.state.eventTime}</div>
+                <div className='location-edit-image bannerText'>Location: {this.state.eventLocation}</div>
+                <div className='address-edit-image bannerText'>Address: {this.state.eventAddress}</div>
+                <div className='hostmsg-edit-image bannerText'>Message: {this.state.eventMessageFromHost}</div>
             </div>
           </div>
 

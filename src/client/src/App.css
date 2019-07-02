@@ -757,6 +757,7 @@ to {
 	height:380px;
 	width: 100%;
 	padding:0 30px;
+	position:relative;
 }
 
 .template-carousel-image{
@@ -1004,6 +1005,7 @@ font-size:24px;
 	-moz-box-shadow: none !important;
 	padding: 0 40px !important;
 	box-sizing: border-box !important;
+	font-size: 13px;
 }
 .templates-edit-page .input-field:nth-child(2n)
 {
@@ -1052,6 +1054,47 @@ text-transform: capitalize;
 background:#fff !important;
 color:#27AE60;
 }
+
+{
+	position:absolute;
+}
+
+.templates-edit-page .bannerText{
+position: absolute;
+left: 50px;
+background: #27AE60;
+padding: 5px 20px;
+color: #fff;
+width: 220px;
+border-radius: 120px;
+text-align: left;
+}
+.templates-edit-page .festival-edit-image{
+top:20px;
+}
+.templates-edit-page .mobilenumber-edit-image{
+top:60px;
+}
+.templates-edit-page .eventdate-edit-image{
+top:100px;
+}
+.templates-edit-page .eventtime-edit-image{
+top:140px;
+}
+.templates-edit-page .location-edit-image{
+top:180px;
+}
+.templates-edit-page .address-edit-image{
+top:220px;
+}
+.templates-edit-page .hostmsg-edit-image{
+top:260px;
+}
+.templates-edit-page .hostedby-edit-image{
+	top:300px;
+}
+
+
 /*Template Page End*/
 @media only screen and (max-width: 1229px) {
 	.landingPage .contain {
