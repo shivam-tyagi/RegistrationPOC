@@ -100,12 +100,6 @@
 	text-align: center;
 	font-family: 'Nunito', sans-serif;
 }
-/* .imageCarouselConatainer {
- padding: 97px 53px 57px;
- background: #2f9f59;
- position: relative;
- } */
-
 .separator-line {
 	text-align: center;
 	border-top: 2px solid #efefef;
@@ -306,18 +300,7 @@
 	width: 200px;
 	height: 80px;
 }
-/* .upperBanner{
- position: relative;
- }
- .upperBanner .carousel-btn-container{
- top:auto;
- bottom: 26px;
- } */
 
-/*.section_banner .imageCarouselConatainer {
- padding:50px 0;
- background: #2980b9;
- }*/
 
 /*--
  ---------IMAGE CAROUSEL-----------*/
@@ -333,11 +316,6 @@ img {
 	vertical-align: middle;
 }
 
-/* .slideshow-container {
- max-width: 1000px;
- position: relative;
- margin: auto;
- } */
 
 .text {
 	color: #f2f2f2;
@@ -776,6 +754,7 @@ left: 14px;
 top: 0px;
 height: 101px;
 background: rgba(0 , 0 , 0 , 0.3) url("assets/arrowLeft.png") no-repeat center center;
+z-index: 9999;
 }
 
 .templateEditRightSideBtn {
@@ -785,6 +764,7 @@ background: black;
 position: absolute;
 right: 14px;
 top: 0px;
+z-index: 9999;
 height: 101px;
 background: rgba(0 , 0 , 0 , 0.3) url("assets/imageRight.png") no-repeat center center;
 }
@@ -813,9 +793,22 @@ font-size:14px;
 font-weight:700;
 font-family: 'Nunito', sans-serif;
 }
+.templates-carousel-container-wrapper{
+	overflow: hidden;
+	position:relative;
+	height:100px;
+}
 .templates-edit-page .templates-carousel-container{
 	white-space: nowrap;
-    overflow: auto;
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+	position:absolute;
+	left:0;
+	top:0;
+	height: 100%;
+	width:100%;
 }
 .templates-edit-page .template-edit-bg {
 	max-height:100%;

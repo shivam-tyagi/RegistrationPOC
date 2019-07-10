@@ -91,6 +91,7 @@ class TemplatesEditComponent extends Component {
           <div className='template-edit-left-container'>
             <div className='template-carousel'>
               <div className='templateEditLeftSideBtn'/>
+              <div className="templates-carousel-container-wrapper">
               <div className='templates-carousel-container'>
                 {
                   landingPageTemplateData.map((elem, index) => {
@@ -106,6 +107,9 @@ class TemplatesEditComponent extends Component {
                   })
                 }
               </div>
+              </div>
+
+
               <div className='templateEditRightSideBtn'/>
             </div>
             <div className="template-edit-container-text clearfix">
