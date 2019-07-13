@@ -7,45 +7,60 @@ import Navbar from '../layout/Navbar';
 class TemplatesEditComponent extends Component {
 
   constructor(props) {
-    // console.log('this.props---', props.editIndex);
+    // console.log('this.props---', props.editId);
     super(props);
     this.editCarouselImagesclick = this.editCarouselImagesclick.bind(this);
-    this.editIndex = props.editIndex;
-    // console.log('landingPageTemplateData', props.landingPageTemplateData, this.editIndex);
+    this.saveToDraft = this.saveToDraft.bind(this);
+    // if(props.landingPageTemplateData.length === 0) {
+    //   props.history.push('/');
+    // }
+    this.editId = props.editId;
+    // console.log('landingPageTemplateData', props.landingPageTemplateData);
     const landingPageTemplateData = props.landingPageTemplateData;
+
+    const editObj = this.objectToEdit(this.editId);
     this.state = {
-      eventTitle: landingPageTemplateData[this.editIndex].data.eventTitle,
-      eventFestival: landingPageTemplateData[this.editIndex].data.eventFestival,
-      eventHostedby: landingPageTemplateData[this.editIndex].data.eventHostedby,
-      eventMobilenumber: landingPageTemplateData[this.editIndex].data.eventMobilenumber,
-      eventDate: landingPageTemplateData[this.editIndex].data.eventDate,
-      eventTime: landingPageTemplateData[this.editIndex].data.eventTime,
-      eventEndTime: landingPageTemplateData[this.editIndex].data.eventEndTime,
-      eventLocation: landingPageTemplateData[this.editIndex].data.eventLocation,
-      eventAddress: landingPageTemplateData[this.editIndex].data.eventAddress,
-      eventMessageFromHost: landingPageTemplateData[this.editIndex].data.eventMessageFromHost,
+      eventTitle: editObj.data.eventTitle,
+      eventFestival: editObj.data.eventFestival,
+      eventHostedby: editObj.data.eventHostedby,
+      eventMobilenumber: editObj.data.eventMobilenumber,
+      eventDate: editObj.data.eventDate,
+      eventTime: editObj.data.eventTime,
+      eventEndTime: editObj.data.eventEndTime,
+      eventLocation: editObj.data.eventLocation,
+      eventAddress: editObj.data.eventAddress,
+      eventMessageFromHost: editObj.data.eventMessageFromHost,
     };
   }
 
   // componentDidMount() {
   //   this.startCarouselAnimation();
   // };
+  objectToEdit = editId => {
+    for (let i=0; i<this.props.landingPageTemplateData.length; i++){
+      if(this.props.landingPageTemplateData[i].template_id === this.editId) {
+        return this.props.landingPageTemplateData[i];
+      }
+    }
+  }
 
-  editCarouselImagesclick(editIndex) {
+  editCarouselImagesclick(editId) {
     const landingPageTemplateData = this.props.landingPageTemplateData;
-    this.editIndex = editIndex;
+    this.editId = editId;
+    
+    const editObj = this.objectToEdit(this.editId);
     // console.log('this===', editIndex, landingPageTemplateData);
     this.setState({
-      eventTitle: landingPageTemplateData[editIndex].data.eventTitle,
-      eventFestival: landingPageTemplateData[editIndex].data.eventFestival,
-      eventHostedby: landingPageTemplateData[editIndex].data.eventHostedby,
-      eventMobilenumber: landingPageTemplateData[editIndex].data.eventMobilenumber,
-      eventDate: landingPageTemplateData[editIndex].data.eventDate,
-      eventTime: landingPageTemplateData[editIndex].data.eventTime,
-      eventEndTime: landingPageTemplateData[editIndex].data.eventEndTime,
-      eventLocation: landingPageTemplateData[editIndex].data.eventLocation,
-      eventAddress: landingPageTemplateData[editIndex].data.eventAddress,
-      eventMessageFromHost: landingPageTemplateData[editIndex].data.eventMessageFromHost,
+      eventTitle: editObj.data.eventTitle,
+      eventFestival: editObj.data.eventFestival,
+      eventHostedby: editObj.data.eventHostedby,
+      eventMobilenumber: editObj.data.eventMobilenumber,
+      eventDate: editObj.data.eventDate,
+      eventTime: editObj.data.eventTime,
+      eventEndTime: editObj.data.eventEndTime,
+      eventLocation: editObj.data.eventLocation,
+      eventAddress: editObj.data.eventAddress,
+      eventMessageFromHost: editObj.data.eventMessageFromHost,
     });
   }
 
@@ -53,9 +68,8 @@ class TemplatesEditComponent extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  onSubmit = e => {
-    e.preventDefault();
-
+  saveTemplateToUserData = (saveToDraft) => {
+    const editObj = this.objectToEdit(this.editId);
     const templateEditInfo = {
       eventTitle: this.state.eventTitle,
       eventFestival: this.state.eventFestival,
@@ -69,14 +83,51 @@ class TemplatesEditComponent extends Component {
       eventMessageFromHost: this.state.eventMessageFromHost,
     };
 
-    // console.log('template edit info**', templateEditInfo);
+    let teplateExistInUser = false;
+    if(this.props.userTemplatesData.length !== 0) {
+      for (let i=0; i<this.props.userTemplatesData.length; i++){
+        if(this.props.userTemplatesData[i].template_id === editObj.template_id) {
+          this.props.userTemplatesData[i].data = templateEditInfo;
+          if(saveToDraft === true){
+            this.props.userTemplatesData[i].isDrafted = true;
+          }
+          teplateExistInUser = true;
+        }
+      }
+    }
 
+    if(teplateExistInUser === false) {
+      const objToAdd = {...editObj};
+      objToAdd.data = templateEditInfo;
+      if(saveToDraft === true){
+        objToAdd.isDrafted = true;
+      }
+      this.props.userTemplatesData.push(objToAdd);
+    }
+
+  }
+
+  onSubmit = e => {
+    e.preventDefault();
+    this.saveTemplateToUserData();
+
+    // console.log('user edit data obj', this.props.landingPageTemplateData)
+    // console.log('props main user data', this.props.userTemplatesData);
+    this.props.history.push('/share');
+    // console.log('template edit info**', templateEditInfo);
     // this.props.registerUser(newUser, this.props.history);
   };
+
+  saveToDraft() {
+    this.saveTemplateToUserData(true);
+    this.props.history.push('/');
+    // console.log('props main user data', this.props.userTemplatesData);
+  }
 
   render() {
     const { user } = this.props.auth;
     const landingPageTemplateData = this.props.landingPageTemplateData;
+    const editObj = this.objectToEdit(this.editId);
     // console.log('edit index-----', this.props.landingPageTemplateData, this.props);
     return (
       <div className='templates-edit-page'>
@@ -113,11 +164,11 @@ class TemplatesEditComponent extends Component {
               <div className='templateEditRightSideBtn'/>
             </div>
             <div className="template-edit-container-text clearfix">
-            <strong>{landingPageTemplateData[this.editIndex].template_name}</strong>
-            <span>{landingPageTemplateData[this.editIndex].template_description}</span>
+            <strong>{editObj.template_name}</strong>
+            <span>{editObj.template_description}</span>
             </div>
             <div className='template-edit-container'>
-                <img className='template-edit-bg' src={landingPageTemplateData[this.editIndex].template_image} alt='edit'/>
+                <img className='template-edit-bg' src={editObj.template_image} alt='edit'/>
                 <div className='hostedby-edit-image bannerText'>Host: {this.state.eventHostedby}</div>
                 <div className='festival-edit-image bannerText'>Festival: {this.state.eventFestival}</div>
                 <div className='mobilenumber-edit-image bannerText'>Mobile no. {this.state.eventMobilenumber}</div>
@@ -186,7 +237,7 @@ class TemplatesEditComponent extends Component {
 
                     <div className="submitFormBtns " >
                       
-                      <button className='save-draft-btn saveButton'>Save Draft</button>
+                      <button onClick={() => this.saveToDraft()} className='save-draft-btn saveButton'>Save Draft</button>
 
 
                       <button type="submit"  className=" btn btn-large waves-effect waves-light hoverable blue accent-3" >
@@ -212,8 +263,9 @@ TemplatesEditComponent.propTypes = {
 const mapStateToProps = (state) => {
   return{
     auth: state.auth,
-    editIndex: state.editIndex,
+    editId: state.editId,
     landingPageTemplateData: state.landingPageTemplateData,
+    userTemplatesData: state.userTemplatesData,
   }
 };
 

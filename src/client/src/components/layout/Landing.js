@@ -48,7 +48,7 @@ class Landing extends Component {
                   templateLayouts.map((template, index) => {
                     return (
                       // eslint-disable-next-line react/no-array-index-key
-                      <div key={index} className="image-container" onClick={() => this.templatesClickHandler(index)}>
+                      <div key={index} className="image-container" onClick={() => this.templatesClickHandler(template.template_id)}>
                         <img src={template.template_image} alt="img"></img>
                         <span className='template-name'>{template.template_name}</span>
                         <span className='template-description'>{template.template_description}</span>

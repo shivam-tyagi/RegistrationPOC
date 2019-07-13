@@ -60,18 +60,42 @@ export const templateLayouts = [{
     template_id: 2,
     template_name:'Easter Egg',
     template_description:'26 March Easter Egg',
-    isFavourite: false,
+    isFavourite: true,
     isDrafted: false,
     isCompleted: false,
+    data: {
+      eventTitle: 'title 2',
+      eventFestival: 'Festival 2',
+      eventHostedby: 'Host 2',
+      eventMobilenumber: 'Mobile 2',
+      eventDate: 'Date 2',
+      eventTime: 'Time 2',
+      eventEndTime: 'End Time 2',
+      eventLocation: 'Location 2',
+      eventAddress: 'Address 2',
+      eventMessageFromHost: 'Host Message 2',
+    }
   },{
     name:'template3',
     template_image: image_template3,
     template_id: 3,
     template_name:'Easter Egg',
     template_description:'26 March Easter Egg',
-    isFavourite: false,
+    isFavourite: true,
     isDrafted: false,
     isCompleted: false,
+    data: {
+      eventTitle: 'title 3',
+      eventFestival: 'Festival 3',
+      eventHostedby: 'Host 3',
+      eventMobilenumber: 'Mobile 3',
+      eventDate: 'Date 3',
+      eventTime: 'Time 3',
+      eventEndTime: 'End Time 3',
+      eventLocation: 'Location 3',
+      eventAddress: 'Address 3',
+      eventMessageFromHost: 'Host Message 3',
+    }
   },{
     name:'template4',
     template_image: image_template4,
@@ -121,9 +145,20 @@ export const templateLayouts = [{
     template_name:'Easter Egg',
     template_description:'26 March Easter Egg',
     isFavourite: false,
-    isDrafted: false,
+    isDrafted: true,
     isCompleted: false,
-
+    data: {
+      eventTitle: 'title 6',
+      eventFestival: 'Festival 6',
+      eventHostedby: 'Host 6',
+      eventMobilenumber: 'Mobile 6',
+      eventDate: 'Date 6',
+      eventTime: 'Time 6',
+      eventEndTime: 'End Time 6',
+      eventLocation: 'Location 6',
+      eventAddress: 'Address 6',
+      eventMessageFromHost: 'Host Message 6',
+    }
   },{
     name:'template7',
     template_image: image_template7,
@@ -131,9 +166,20 @@ export const templateLayouts = [{
     template_name:'Easter Egg',
     template_description:'26 March Easter Egg',
     isFavourite: false,
-    isDrafted: false,
+    isDrafted: true,
     isCompleted: false,
-
+    data: {
+      eventTitle: 'title 7',
+      eventFestival: 'Festival 7',
+      eventHostedby: 'Host 7',
+      eventMobilenumber: 'Mobile 7',
+      eventDate: 'Date 7',
+      eventTime: 'Time 7',
+      eventEndTime: 'End Time 7',
+      eventLocation: 'Location 7',
+      eventAddress: 'Address 7',
+      eventMessageFromHost: 'Host Message 7',
+    }
   },{
     name:'template8',
     template_image: image_template8,
@@ -142,8 +188,19 @@ export const templateLayouts = [{
     template_description:'26 March Easter Egg',
     isFavourite: false,
     isDrafted: false,
-    isCompleted: false,
-
+    isCompleted: true,
+    data: {
+      eventTitle: 'title 8',
+      eventFestival: 'Festival 8',
+      eventHostedby: 'Host 8',
+      eventMobilenumber: 'Mobile 8',
+      eventDate: 'Date 8',
+      eventTime: 'Time 8',
+      eventEndTime: 'End Time 8',
+      eventLocation: 'Location 8',
+      eventAddress: 'Address 8',
+      eventMessageFromHost: 'Host Message 8',
+    }
   }
 ];
 

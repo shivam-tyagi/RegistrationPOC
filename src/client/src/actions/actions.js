@@ -7,6 +7,7 @@ export const USER_LOADING = "USER_LOADING";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const TEMPLATE_TO_EDIT = "TEMPLATE_TO_EDIT";
 export const LANDING_PAGE_TEMPLATES_DATA = "LANDING_PAGE_TEMPLATES_DATA";
+export const USER_TEMPLATES_DATA = "USER_TEMPLATES_DATA";
 
 export const registerUser = (userData, history) => dispatch => {
   console.log("user data-->",userData);
@@ -45,6 +46,23 @@ export const loginUser = userData => dispatch => {
       })
     );
 };
+
+//User email k behalf par user ki templates ka data load hoga
+export const userTemplatesData = (userName) => dispatch => {
+  const userTemplatesData = [];
+  dispatch(setUserTemplatesData(userTemplatesData));
+  // dispatch({
+  //   type: USER_TEMPLATES_DATA,
+  //   payload: userTemplatesData
+  // });
+}
+
+export const setUserTemplatesData = userTemplatesData => {
+  return {
+    type: USER_TEMPLATES_DATA,
+    payload: userTemplatesData
+  };
+}
 
 // Set logged in user
 export const setCurrentUser = decoded => {

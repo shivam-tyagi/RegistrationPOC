@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginUser } from "../../actions/actions";
+import { loginUser, userTemplatesData } from "../../actions/actions";
 import classnames from "classnames";
 import {configData, login_carousel_images} from '../../data/config';
 import ImageCarouselForLogin from '../imageCarouselLogin/ImageCarouselForLogin';
@@ -49,6 +49,8 @@ class Login extends Component {
     };
 
     this.props.loginUser(userData);
+    // const userTempData = [];
+    this.props.userTemplatesData(userData.email);
   };
 
   closeBtnClickHandler = e => {
@@ -147,7 +149,9 @@ class Login extends Component {
                   <li><a href="javascript:void(0)" className="Socialicon linkedinIcon"></a></li>
                   <li><a href="javascript:void(0)" className="Socialicon facebookIcon"></a></li>
                 </ul>
-                           <p>Don't have an account? <Link to="/signup" className="signUpText">Signup</Link></p>
+              
+             <p>Don't have an account? <Link to="/signup" className="signUpText">Signup</Link></p>
+
             </div>
 
            </div>
@@ -169,8 +173,14 @@ const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
 });
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loginUser,
+    userTemplatesData,
+  };
+};
 
 export default connect(
   mapStateToProps,
-  { loginUser }
+  mapDispatchToProps
 )(Login);

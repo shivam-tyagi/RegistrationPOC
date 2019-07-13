@@ -4,7 +4,10 @@ import {
   GET_ERRORS,
   TEMPLATE_TO_EDIT,
   LANDING_PAGE_TEMPLATES_DATA,
+  USER_TEMPLATES_DATA,
 } from "../actions/actions";
+
+import {templateLayouts} from '../data/config';
 
 const isEmpty = require("is-empty");
 
@@ -41,7 +44,7 @@ function errorReducer(state = {}, action) {
   }
 }
 
-function editTemplateIndex( state = 0, action) {
+function editTemplateId( state = 0, action) {
   // console.log('actions*****', action);
   switch(action.type) {
     case TEMPLATE_TO_EDIT:
@@ -52,9 +55,19 @@ function editTemplateIndex( state = 0, action) {
 }
 
 function landingPageTemplateData( state = [], action) {
-  console.log('actions*****', action.payload);
+  // console.log('actions*****', action.payload);
   switch(action.type) {
     case LANDING_PAGE_TEMPLATES_DATA:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
+function userTemplatesData (state = templateLayouts, action) {
+  console.log('action ka payload', action.payload, state)
+  switch(action.type) {
+    case USER_TEMPLATES_DATA:
       return action.payload;
     default:
       return state;
@@ -65,6 +78,7 @@ function landingPageTemplateData( state = [], action) {
 export default combineReducers({
   auth: authReducer,
   errors: errorReducer,
-  editIndex: editTemplateIndex,
+  editId: editTemplateId,
   landingPageTemplateData: landingPageTemplateData,
+  userTemplatesData: userTemplatesData,
 });

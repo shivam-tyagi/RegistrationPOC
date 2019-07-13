@@ -2,45 +2,141 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/actions";
-import {configData} from '../../data/config';
+// import {configData} from '../../data/config';
+import Navbar from '../layout/Navbar';
 
 class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.showFavouriteEvents = this.showFavouriteEvents.bind(this);
+    this.showDraftedEvents = this.showDraftedEvents.bind(this);
+    this.showUpcomingEvents = this.showUpcomingEvents.bind(this);
+    this.showCompletedEvents = this.showCompletedEvents.bind(this);
+    this.state = {
+      templateListToShow: 'fav'
+    };
+  }
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
   };
 
+  showFavouriteEvents = () => {
+    console.log('showFavouriteList');
+    this.setState({
+      templateListToShow: 'fav'
+    });
+  }
+
+  showDraftedEvents = () => {
+    console.log('showDraftedEvents');
+    this.setState({
+      templateListToShow: 'drafted'
+    });
+  }
+
+  showUpcomingEvents = () => {
+    console.log('showUpcomingEvents');
+    this.setState({
+      templateListToShow: 'upcoming'
+    });
+  }
+
+  showCompletedEvents = () => {
+    console.log('showCompletedEvents');
+    this.setState({
+      templateListToShow: 'completed'
+    });
+  }
+
   render() {
     const { user } = this.props.auth;
-    console.log("user name-->",user );
+    const templatesData = this.props.userTemplatesData;
+    console.log("user name-->",templatesData , this.state.templateListToShow);
     return (
-      <div 
-      style= {{ 
-        height: "75vh", 
-        backgroundColor: `${configData.homePageBgColor}` 
-      }} 
-      className="container valign-wrapper">
-        <div className="row">
-          <div className="landing-copy col s12 center-align">
-            <h4>
-              <b>Hey there,</b> {user.firstname}
-              <p className="flow-text grey-text text-darken-1">
-                You are successfully logged in.{" "}
-                <span style={{ fontFamily: "monospace" }}>Registration</span> app 👏
-              </p>
-            </h4>
-            <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-            >
-              Logout
-            </button>
+      <div style={{ height: "100%" }} className=" valign-wrapper dashboard">
+        <Navbar {...this.props}></Navbar>
+        <div>
+          <div className='dashboard-left-container'>
+            <div className='dashboard-btn-container'>
+              <div className='favourite-events-btn' onClick={() => this.showFavouriteEvents()}>Favourite</div>
+              <div className='drafted-events-btn' onClick={() => this.showDraftedEvents()}>Drafted</div>
+              <div className='upcoming-events-btn' onClick={() => this.showUpcomingEvents()}>Upcoming</div>
+              <div className='completed-events-btn' onClick={() => this.showCompletedEvents()}>Completed</div>
+            </div>
+          </div>
+          <div className='dashboard-right-container'>
+            <div className='right-container-data'>
+              <div className='dashboard-search-field'></div>
+              <div className='dashboard-templatesData'>
+                <div className='dashboard-templates-container'>
+                    { this.state.templateListToShow === 'fav' ?
+                        <div id='favTemplatesList' className="trendingImageElems">
+                          {
+                            templatesData.map((template, index) => {
+                              return ( template.isFavourite && (
+                                <div key={'fev' + index} className="image-container" onClick={() => this.templatesClickHandler(template.template_id)}>
+                                  <img src={template.template_image} alt="img"></img>
+                                  <span className='template-name'>{template.template_name}</span>
+                                  <span className='template-description'>{template.template_description}</span>
+                                  <div className='love-symbol'></div>
+                                </div>)
+                              );
+                            })
+                          }
+                        </div> : null
+                    }
+                    { this.state.templateListToShow === 'drafted' ?
+                        <div id='draftedTemplatesList' className="trendingImageElems">
+                          {
+                            templatesData.map((template, index) => {
+                              return ( template.isDrafted && (
+                                <div key={'drafted' + index} className="image-container" onClick={() => this.templatesClickHandler(template.template_id)}>
+                                  <img src={template.template_image} alt="img"></img>
+                                  <span className='template-name'>{template.template_name}</span>
+                                  <span className='template-description'>{template.template_description}</span>
+                                  <div className='drafted-symbol'></div>
+                                </div>)
+                              );
+                            })
+                          }
+                        </div> : null
+                    }
+                    { this.state.templateListToShow === 'upcoming' ?
+                        <div id='upcomingTemplatesList' className="trendingImageElems">
+                          {
+                            templatesData.map((template, index) => {
+                              return (template.isDrafted && (
+                                <div key={'upcoming' + index} className="image-container" onClick={() => this.templatesClickHandler(template.template_id)}>
+                                  <img src={template.template_image} alt="img"></img>
+                                  <span className='template-name'>{template.template_name}</span>
+                                  <span className='template-description'>{template.template_description}</span>
+                                  <div className='drafted-symbol'></div>
+                                </div>)
+                              );
+                            })
+                          }
+                        </div> : null
+                    }
+                    { this.state.templateListToShow === 'completed' ?
+                        <div id='completedTemplatesList' className="trendingImageElems">
+                          {
+                            templatesData.map((template, index) => {
+                              return ( template.isCompleted && (
+                                <div key={'completed' + index} className="image-container" onClick={() => this.templatesClickHandler(template.template_id)}>
+                                  <img src={template.template_image} alt="img"></img>
+                                  <span className='template-name'>{template.template_name}</span>
+                                  <span className='template-description'>{template.template_description}</span>
+                                  <div className='drafted-symbol'></div>
+                                </div>)
+                              );
+                            })
+                          }
+                        </div> : null
+                    }
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -54,7 +150,8 @@ Dashboard.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  userTemplatesData: state.userTemplatesData
 });
 
 export default connect(
