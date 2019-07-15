@@ -41,14 +41,6 @@ class Navbar extends Component {
               <React.Fragment>
                 <div className="my-cards-header-btn"></div>
                 <div className="my-profile-name" onClick={() => this.myProfilesBtnClick()}></div>
-                { this.state.showProfileData ? 
-                <div className='my-profile-container'>
-                  <div>My Profiles</div>
-                  <div>My Details</div>
-                  <div>Sign Out</div>
-                </div> :  null
-
-                }
               </React.Fragment> :
               <React.Fragment>
                 <Link to="/signup" className="register-text">Register</Link>
@@ -63,7 +55,13 @@ class Navbar extends Component {
             <i className="searchIcon"></i>
           </div>
         </div>
-        {/* </div> */}
+        { this.state.showProfileData ? 
+          <div className='my-profile-container'>
+            <div>My Profiles</div>
+            <div>My Details</div>
+            <div>Sign Out</div>
+          </div> :  null
+        }
       </div>
     );
   }
