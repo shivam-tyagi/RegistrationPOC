@@ -56,16 +56,23 @@ class Dashboard extends Component {
     return (
       <div style={{ height: "100%" }} className=" valign-wrapper dashboard">
         <Navbar {...this.props}></Navbar>
-        <div>
+        <div className="clearfix dashboardWrapper">
           <div className='dashboard-left-container'>
             <div className='dashboard-btn-container'>
-              <div className='favourite-events-btn' onClick={() => this.showFavouriteEvents()}>Favourite</div>
-              <div className='drafted-events-btn' onClick={() => this.showDraftedEvents()}>Drafted</div>
-              <div className='upcoming-events-btn' onClick={() => this.showUpcomingEvents()}>Upcoming</div>
-              <div className='completed-events-btn' onClick={() => this.showCompletedEvents()}>Completed</div>
+              <div className='favourite-events-btn sidebtn' onClick={() => this.showFavouriteEvents()}><i></i>Favourite</div>
+              <div className='drafted-events-btn sidebtn active' onClick={() => this.showDraftedEvents()}><i></i>Drafted</div>
+              <div className='upcoming-events-btn sidebtn' onClick={() => this.showUpcomingEvents()}><i></i>Upcoming</div>
+              <div className='completed-events-btn sidebtn' onClick={() => this.showCompletedEvents()}><i></i>Completed</div>
             </div>
           </div>
           <div className='dashboard-right-container'>
+
+           <div className="dashboardUpper">
+                    <div className="searchWrapper">
+                       <input type="text" placeholder="Search Design"/>
+                       <i className="searchIcon"></i>
+                    </div>
+           </div>
             <div className='right-container-data'>
               <div className='dashboard-search-field'></div>
               <div className='dashboard-templatesData'>
