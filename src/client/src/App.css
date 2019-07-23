@@ -1433,3 +1433,29 @@ transform: translateY(-50%);
 	}
 }
 
+
+/*****Share Page CSS Starts******/
+.template-share-container-left, .template-share-container-right {
+	display: inline-block;
+    width: 50%;
+    height: 100%;
+}
+
+.template-to-share {
+	width: 100%;
+	height: 400px;
+}
+
+.share-template-img {
+	/* position: absolute; */
+	width: 300px;
+	height: 300px;
+	border: 1px solid red;
+	display: inline-block;
+}
+
+.template-data {
+	display: inline-block;
+}
+
+/*****Share Page CSS Ends******/

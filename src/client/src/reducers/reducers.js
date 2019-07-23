@@ -12,7 +12,7 @@ import {templateLayouts} from '../data/config';
 const isEmpty = require("is-empty");
 
 const initialState = {
-  isAuthenticated: true,
+  isAuthenticated: false,
   user: {},
   loading: false
 };
