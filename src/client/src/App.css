@@ -1325,9 +1325,7 @@ width: 18px;
 background: url("assets/edit.png") no-repeat center center;
 height: 18px;
 }
-.dashboard .dashboardUpper{
 
-}
 .dashboard .dashboardUpper .searchWrapper{
 width:500px;
 margin:0 auto;
@@ -1435,7 +1433,7 @@ transform: translateY(-50%);
 
 
 /*****Share Page CSS Starts******/
-.template-share-container-left, .template-share-container-right {
+/* .template-share-container-left, .template-share-container-right {
 	display: inline-block;
     width: 50%;
     height: 100%;
@@ -1447,7 +1445,6 @@ transform: translateY(-50%);
 }
 
 .share-template-img {
-	/* position: absolute; */
 	width: 300px;
 	height: 300px;
 	border: 1px solid red;
@@ -1456,6 +1453,153 @@ transform: translateY(-50%);
 
 .template-data {
 	display: inline-block;
-}
+} */
 
+
+.template-share-container-left{
+	float:left;
+	width:60%;
+	padding:20px;
+}
+.template-share-container-right{
+	float: left;
+	width: 40%;
+	height: 100vh;
+	padding: 20px;
+	box-shadow: -1px 0px 7px 0 #ccc;
+}
+.share-template-img{
+	float: left;
+	width: 50%;
+	height: 169px;
+	background: url(/static/media/bg.84b04a0d.png) no-repeat top center;
+	background-size: 100%;
+}
+.template-data{
+	float: left;
+	width: 50%;
+	padding: 20px 30px;
+}
+.share-template-title{
+	color: #2ECC71;
+	
+	font-weight: 700;
+	
+	margin: 0 0 43px;
+	
+	font-size: 22px;
+}
+.template-share-link span{
+	display:block;
+	color:#333333;
+	font-size:13px;
+	font-weight:400;
+	margin:0 0 10px;
+}
+.template-share-link ul {
+	text-align:left;
+	margin:0;
+}
+.adobeLink{
+	display: inline-block;
+	
+	color: #000;
+	
+	font-weight: 400;
+	
+	padding: 0 5px;
+	
+	border: 1px solid #000;
+	
+	font-size: 12px;
+	
+	line-height: 22px;
+}
+.template-to-share{
+	margin:0 0 40px;
+}
+.guest-list-container h3{
+	margin:0 0 20px;
+	font-size:28px;
+	color:#303030;
+	font-weight:400;
+}
+.contactWrapper{
+margin:0 0 20px;
+}
+.contactWrapper a{
+	display: inline-block;
+	margin: 0 20px 0 0;
+	font-size: 14px;
+	font-weight: 400;
+	color: #2ECC71;
+	padding: 4px 10px;
+	border: 1px solid #2ECC71;
+	border-radius: 20px;
+	text-align: center;
+	width: 140px;
+}
+.inputDeleteWrapper{
+position: relative;
+padding-top:20px;
+}
+.inputDeleteWrapper a.deleteall-btn{
+	color: #2ECC71;
+	font-size:14px;
+	position: absolute;
+	right:0;
+	top:-10px;
+	font-weight:400;
+
+}
+.inputDeleteWrapper input{
+	padding: 20px !important;
+	border: 1px solid #e6e6e6 !important; 
+	border-radius: 10px !important;
+	font-weight:400 !important;
+	font-size:12px !important;
+	color:#B3B3B3 !important;
+	width:100%;
+	box-sizing: border-box !important;
+	height:80px !important;
+}
+.template-share-container-right h2{
+	color: #2ECC71;
+	font-weight: 700;
+	margin: 0 0 30px;
+	font-size: 22px;
+	text-align:center;
+}
+.tableWrapper table {
+
+}
+.tableWrapper td , .tableWrapper td a{
+color:#3a3a3a;
+font-size:13px;
+font-weight:400;
+border:1px solid #171717;
+padding: 0 10px;
+line-height: 30px;
+height: 30px;
+}
+.tableWrapper td a 
+{
+	display:inline-block;
+	margin-right:10px;
+	border:none;
+	padding:0;
+	
+}
+.tableWrapper th{
+font-size:13px;
+color:#000;
+font-weight:700;
+border:none;
+padding: 0 10px;
+line-height: 30px;
+height: 30px;
+}
+.tableWrapper tr{
+
+}
 /*****Share Page CSS Ends******/
