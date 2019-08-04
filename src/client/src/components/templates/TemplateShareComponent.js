@@ -35,7 +35,7 @@ class TemplatesShareComponent extends Component {
         <div className='share-page-container'>
           <div className='template-share-container-left'>
             <div className='template-to-share clearfix'>
-              <div className='share-template-img'>
+              <div id="appendScreenshot" className='share-template-img'>
 
               </div>
               <div className='template-data'>
@@ -44,7 +44,7 @@ class TemplatesShareComponent extends Component {
                 </h2>
                 <div className='template-share-link'>
                       <span>Share event link with guests</span>
-                      <ul className="social_list"><li><a href="javascript:void(0)" class="Socialicon googleIcon"></a></li><li><a href="javascript:void(0)" class="Socialicon linkedinIcon"></a></li><li><a href="javascript:void(0)" class="Socialicon facebookIcon"></a></li></ul>
+                      <ul className="social_list"><li><a href="javascript:void(0)" className="Socialicon googleIcon"></a></li><li><a href="javascript:void(0)" className="Socialicon linkedinIcon"></a></li><li><a href="javascript:void(0)" className="Socialicon facebookIcon"></a></li></ul>
                       <a href="https://xd.adobe.com/view/456" target="_blank" className="adobeLink">https://xd.adobe.com/view/456</a>
                 </div>
               </div>
@@ -70,7 +70,7 @@ class TemplatesShareComponent extends Component {
             <div className='save-sent-later-btn'>Save &amp; Sent Later</div>
             <div className='finish-sent-btn'>Finish Send</div> */}
 
-              <div class="tableWrapper">
+              <div className="tableWrapper">
                    <table>
                          <thead>
                              <tr>

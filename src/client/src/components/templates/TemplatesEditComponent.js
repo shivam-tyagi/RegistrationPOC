@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import Navbar from '../layout/Navbar';
+import html2canvas from "html2canvas";
 
 class TemplatesEditComponent extends Component {
 
@@ -11,6 +12,7 @@ class TemplatesEditComponent extends Component {
     super(props);
     this.editCarouselImagesclick = this.editCarouselImagesclick.bind(this);
     this.saveToDraft = this.saveToDraft.bind(this);
+    this.moveCaousalBtn = this.moveCaousalBtn.bind(this);
     // if(props.landingPageTemplateData.length === 0) {
     //   props.history.push('/');
     // }
@@ -113,7 +115,14 @@ class TemplatesEditComponent extends Component {
 
     // console.log('user edit data obj', this.props.landingPageTemplateData)
     // console.log('props main user data', this.props.userTemplatesData);
-    this.props.history.push('/share');
+    console.clear();
+    console.log('this--------------',html2canvas(document.querySelector("#templatesEditorForScreenshot")));
+    html2canvas(document.querySelector("#templatesEditorForScreenshot"), {width: 340, height: 169, scale: 1}).then(canvas => {
+        // document.body.appendChild(canvas);
+        this.props.history.push('/share');
+        console.log('***********', document.getElementById("appendScreenshot"));
+        document.getElementById("appendScreenshot").appendChild(canvas);
+    });
     // console.log('template edit info**', templateEditInfo);
     // this.props.registerUser(newUser, this.props.history);
   };
@@ -122,6 +131,23 @@ class TemplatesEditComponent extends Component {
     this.saveTemplateToUserData(true);
     this.props.history.push('/');
     // console.log('props main user data', this.props.userTemplatesData);
+  }
+
+  moveCaousalBtn = state => {
+    const lengthOfDiv = this.props.landingPageTemplateData.length * 120;
+    const currWidth = document.getElementById('carouselElems').clientWidth;
+    if(state === 'left'){
+      let leftValue = (parseInt(document.getElementById('carouselElems').style.left)) + 120;
+      leftValue = leftValue > 0 ? 0 : leftValue;
+      leftValue = leftValue + 'px';
+      document.getElementById('carouselElems').style.left = leftValue;
+    } else if (state === 'right') {
+      let rightValue = (parseInt(document.getElementById('carouselElems').style.left)) ? (parseInt(document.getElementById('carouselElems').style.left) - 120) : -120;
+      const maxAllowed = currWidth - lengthOfDiv;
+      rightValue = rightValue < maxAllowed ? maxAllowed : rightValue;
+      rightValue = rightValue + 'px';
+      document.getElementById('carouselElems').style.left = rightValue;
+    }
   }
 
   render() {
@@ -141,9 +167,9 @@ class TemplatesEditComponent extends Component {
 
           <div className='template-edit-left-container'>
             <div className='template-carousel'>
-              <div className='templateEditLeftSideBtn'/>
+              <div className='templateEditLeftSideBtn' onClick={() => this.moveCaousalBtn('left')}/>
               <div className="templates-carousel-container-wrapper">
-              <div className='templates-carousel-container'>
+              <div id="carouselElems" className='templates-carousel-container'>
                 {
                   landingPageTemplateData.map((elem, index) => {
                     return (
@@ -161,13 +187,13 @@ class TemplatesEditComponent extends Component {
               </div>
 
 
-              <div className='templateEditRightSideBtn'/>
+            <div className='templateEditRightSideBtn' onClick={() => this.moveCaousalBtn('right')}/>
             </div>
             <div className="template-edit-container-text clearfix">
             <strong>{editObj.template_name}</strong>
             <span>{editObj.template_description}</span>
             </div>
-            <div className='template-edit-container'>
+            <div id="templatesEditorForScreenshot" className='template-edit-container'>
                 <img className='template-edit-bg' src={editObj.template_image} alt='edit'/>
                 <div className='hostedby-edit-image bannerText'>Host: {this.state.eventHostedby}</div>
                 <div className='festival-edit-image bannerText'>Festival: {this.state.eventFestival}</div>
